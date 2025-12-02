@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Instagram, Facebook } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 
 const Footer = () => {
+  const { t } = useLanguage()
   return (
     <footer style={{
       backgroundColor: '#111',
@@ -38,8 +40,7 @@ const Footer = () => {
               </h3>
             </div>
             <p style={{ marginBottom: '1rem', lineHeight: '1.6' }}>
-              Professional body piercing and modification studio. 
-              Ethically crafted experiences with the highest standards of safety and artistry.
+              {t.footer.description}
             </p>
             <div className="flex" style={{ gap: '1rem' }}>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: '#dc2626' }}>
@@ -53,7 +54,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 style={{ marginBottom: '1rem', color: '#dc2626' }}>Services</h4>
+            <h4 style={{ marginBottom: '1rem', color: '#dc2626' }}>{t.footer.services}</h4>
             <div className="flex-column" style={{ gap: '0.5rem' }}>
               <Link to="/piercings" style={{ color: 'white', textDecoration: 'none' }}>
                 Body Piercings
@@ -72,47 +73,47 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 style={{ marginBottom: '1rem', color: '#dc2626' }}>Contact</h4>
+            <h4 style={{ marginBottom: '1rem', color: '#dc2626' }}>{t.footer.contact}</h4>
             <div className="flex-column" style={{ gap: '0.5rem' }}>
               <div className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
                 <Phone size={16} />
-                <a href="tel:+1234567890" style={{ color: 'white', textDecoration: 'none' }}>
-                  +1 (234) 567-890
+                <a href="tel:+5511979826688" style={{ color: 'white', textDecoration: 'none' }}>
+                  (11) 97982-6688
                 </a>
               </div>
               <div className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
                 <Mail size={16} />
-                <a href="mailto:info@vermelhosangue.com" style={{ color: 'white', textDecoration: 'none' }}>
-                  info@vermelhosangue.com
+                <a href="mailto:vermelhosanguejewelry@gmail.com" style={{ color: 'white', textDecoration: 'none' }}>
+                  vermelhosanguejewelry@gmail.com
                 </a>
               </div>
               <div className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
                 <MapPin size={16} />
-                <span>123 Studio Street, City, State 12345</span>
+                <span>{t.footer.address}</span>
               </div>
             </div>
           </div>
 
           {/* Hours */}
           <div>
-            <h4 style={{ marginBottom: '1rem', color: '#dc2626' }}>Hours</h4>
+            <h4 style={{ marginBottom: '1rem', color: '#dc2626' }}>{t.footer.hours}</h4>
             <div className="flex-column" style={{ gap: '0.5rem', fontSize: '0.9rem' }}>
               <div className="flex-between">
-                <span>Monday - Friday</span>
+                <span>{t.footer.mondayFriday}</span>
                 <span>10:00 AM - 8:00 PM</span>
               </div>
               <div className="flex-between">
-                <span>Saturday</span>
+                <span>{t.footer.saturday}</span>
                 <span>10:00 AM - 6:00 PM</span>
               </div>
               <div className="flex-between">
-                <span>Sunday</span>
-                <span>Closed</span>
+                <span>{t.footer.sunday}</span>
+                <span>{t.footer.closed}</span>
               </div>
             </div>
             <div style={{ marginTop: '1rem' }}>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="btn" style={{ width: '100%', textAlign: 'center' }}>
-                Book via WhatsApp
+              <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{ width: '100%', textAlign: 'center' }}>
+                {t.footer.bookViaWhatsapp}
               </a>
             </div>
           </div>
@@ -129,14 +130,14 @@ const Footer = () => {
           gap: '1rem'
         }}>
           <p style={{ fontSize: '0.9rem', opacity: 0.7 }}>
-            © 2024 Vermelho Sangue. All rights reserved.
+            {t.footer.copyright}
           </p>
           <div className="flex" style={{ gap: '2rem', fontSize: '0.9rem' }}>
             <Link to="/about" style={{ color: 'white', textDecoration: 'none', opacity: 0.7 }}>
-              Privacy Policy
+              {t.footer.privacyPolicy}
             </Link>
             <Link to="/about" style={{ color: 'white', textDecoration: 'none', opacity: 0.7 }}>
-              Terms of Service
+              {t.footer.termsOfService}
             </Link>
           </div>
         </div>

@@ -1,8 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle, Clock, Shield } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 
 const Lobuloplasty = () => {
+  const { t } = useLanguage()
   return (
     <div style={{ paddingTop: '120px' }}>
       {/* Hero Section */}
@@ -24,7 +26,7 @@ const Lobuloplasty = () => {
               fontFamily: 'Poppins, sans-serif',
               fontWeight: '700'
             }}>
-              LOBULOPLASTY
+              {t.services.bodyModifications.lobuloplasty.title}
             </h1>
             <h2 style={{
               fontSize: '2rem',
@@ -32,7 +34,7 @@ const Lobuloplasty = () => {
               fontFamily: 'Poppins, sans-serif',
               fontWeight: '400'
             }}>
-              Expert ear lobe repair and reconstruction
+              Remodelagem e reconstrução do lóbulo
             </h2>
             <p style={{
               fontSize: '1.2rem',
@@ -41,8 +43,7 @@ const Lobuloplasty = () => {
               margin: '0 auto 3rem',
               lineHeight: '1.6'
             }}>
-              Professional ear lobe repair services for torn, stretched, or damaged lobes. 
-              Restore your ears to their natural beauty with our expert techniques.
+              Procedimento que consiste em remodelar o lóbulo, respeitando o formato natural da orelha.
             </p>
           </motion.div>
         </div>
@@ -64,7 +65,7 @@ const Lobuloplasty = () => {
                 color: '#dc2626',
                 fontFamily: 'Poppins, sans-serif'
               }}>
-                WHAT IS LOBULOPLASTY?
+                {t.services.bodyModifications.lobuloplasty.title}
               </h2>
               <p style={{
                 fontSize: '1.1rem',
@@ -72,18 +73,7 @@ const Lobuloplasty = () => {
                 lineHeight: '1.7',
                 color: '#333'
               }}>
-                Lobuloplasty is a surgical procedure to repair, reconstruct, or reshape 
-                damaged ear lobes. This includes repairing torn lobes, reducing stretched 
-                lobes, and correcting deformities.
-              </p>
-              <p style={{
-                fontSize: '1.1rem',
-                marginBottom: '2rem',
-                lineHeight: '1.7',
-                color: '#333'
-              }}>
-                Our experienced practitioners use advanced techniques to ensure minimal 
-                scarring and optimal healing, restoring your ears to their natural appearance.
+                {t.services.bodyModifications.lobuloplasty.description}
               </p>
             </motion.div>
             
@@ -93,17 +83,44 @@ const Lobuloplasty = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               style={{
-                backgroundColor: '#f5f5f5',
-                height: '400px',
-                borderRadius: '12px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#999',
-                fontSize: '1.1rem'
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: 0,
+                height: '500px'
               }}
             >
-              [Before/After Images]
+              <div style={{ overflow: 'hidden' }}>
+                <img 
+                  src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Lobuloplastia%20/IMG_2847.PNG"
+                  alt="Lobuloplasty Before/After"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block'
+                  }}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.style.backgroundColor = '#f5f5f5';
+                  }}
+                />
+              </div>
+              <div style={{ overflow: 'hidden' }}>
+                <img 
+                  src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Lobuloplastia%20/D00BB1F3-367A-43A6-A208-21FC0563B253.jpg"
+                  alt="Lobuloplasty Before/After"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block'
+                  }}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.style.backgroundColor = '#f5f5f5';
+                  }}
+                />
+              </div>
             </motion.div>
           </div>
         </div>
@@ -186,6 +203,45 @@ const Lobuloplasty = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Image Gallery Section */}
+      <section style={{ padding: '4rem 0' }}>
+        <div className="container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '2rem',
+            width: '100%',
+            maxWidth: '1200px',
+            margin: '0 auto'
+          }}>
+            <img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Lobuloplastia%20/2B7F2E13-C5A8-4D3D-922D-3EEB777FE349.jpg"
+              alt="Lobuloplasty"
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block'
+              }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+            <img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Lobuloplastia%20/544C7F23-6D52-440E-B535-BC17247816CD.jpg"
+              alt="Lobuloplasty"
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block'
+              }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
           </div>
         </div>
       </section>
@@ -297,7 +353,7 @@ const Lobuloplasty = () => {
             }}>
               Book your consultation and let us help you achieve the perfect ear lobe repair
             </p>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="btn" style={{
+            <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{
               backgroundColor: '#dc2626',
               fontSize: '1.1rem',
               padding: '15px 30px'

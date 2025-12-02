@@ -1,8 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Shield, Lock, CheckCircle } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 
 const GenitalPiercing = () => {
+  const { t } = useLanguage()
   return (
     <div style={{ paddingTop: '120px' }}>
       {/* Hero Section */}
@@ -24,7 +26,7 @@ const GenitalPiercing = () => {
               fontFamily: 'Poppins, sans-serif',
               fontWeight: '700'
             }}>
-              GENITAL PIERCING
+              {t.genitalPiercing.title}
             </h1>
             <h2 style={{
               fontSize: '2rem',
@@ -32,7 +34,7 @@ const GenitalPiercing = () => {
               fontFamily: 'Poppins, sans-serif',
               fontWeight: '400'
             }}>
-              Professional intimate piercing services
+              {t.genitalPiercing.subtitle}
             </h2>
             <p style={{
               fontSize: '1.2rem',
@@ -41,8 +43,7 @@ const GenitalPiercing = () => {
               margin: '0 auto 3rem',
               lineHeight: '1.6'
             }}>
-              Safe, professional genital piercing services performed in a sterile, 
-              private environment with the highest standards of care and discretion.
+              {t.genitalPiercing.description}
             </p>
             <div style={{
               backgroundColor: 'rgba(255,255,255,0.1)',
@@ -53,7 +54,7 @@ const GenitalPiercing = () => {
             }}>
               <div className="flex" style={{ alignItems: 'center', gap: '0.5rem', justifyContent: 'center' }}>
                 <Lock size={20} />
-                <span style={{ fontWeight: '600' }}>18+ ONLY • PRIVATE CONSULTATIONS</span>
+                <span style={{ fontWeight: '600' }}>{t.genitalPiercing.ageRestriction}</span>
               </div>
             </div>
           </motion.div>
@@ -76,24 +77,24 @@ const GenitalPiercing = () => {
               color: '#dc2626',
               fontFamily: 'Poppins, sans-serif'
             }}>
-              OUR SERVICES
+              {t.genitalPiercing.ourServices}
             </h2>
             <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-              Professional genital piercing services with complete privacy and discretion
+              {t.genitalPiercing.ourServicesDescription}
             </p>
           </motion.div>
 
           <div className="grid grid-2">
             {[
               {
-                title: 'Male Genital Piercings',
+                title: t.genitalPiercing.maleTitle,
                 piercings: [
                   'Prince Albert', 'Ampallang', 'Apadravya', 'Dydoe',
                   'Frenum', 'Guiche', 'Hafada', 'Lorum'
                 ]
               },
               {
-                title: 'Female Genital Piercings',
+                title: t.genitalPiercing.femaleTitle,
                 piercings: [
                   'Clitoral Hood', 'Inner Labia', 'Outer Labia', 'Triangle',
                   'Fourchette', 'Christina', 'Isabella', 'Princess Albertina'
@@ -152,7 +153,7 @@ const GenitalPiercing = () => {
                 color: '#dc2626',
                 fontFamily: 'Poppins, sans-serif'
               }}>
-                SAFETY & PRIVACY
+                {t.genitalPiercing.safetyTitle}
               </h2>
               <p style={{
                 fontSize: '1.1rem',
@@ -160,18 +161,10 @@ const GenitalPiercing = () => {
                 lineHeight: '1.7',
                 color: '#333'
               }}>
-                Your safety and privacy are our top priorities. All procedures are 
-                performed in a completely private, sterile environment with the 
-                highest standards of hygiene and discretion.
+                {t.genitalPiercing.safetyDescription}
               </p>
               <div className="flex-column" style={{ gap: '1rem' }}>
-                {[
-                  'Completely private consultation rooms',
-                  'Sterile, medical-grade equipment',
-                  'Implant-grade jewelry only',
-                  'Strict confidentiality protocols',
-                  'Experienced, certified practitioners'
-                ].map((feature, index) => (
+                {t.genitalPiercing.safetyFeatures.map((feature, index) => (
                   <div key={index} className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
                     <Shield size={16} style={{ color: '#dc2626' }} />
                     <span>{feature}</span>
@@ -224,7 +217,7 @@ const GenitalPiercing = () => {
               color: '#856404',
               fontFamily: 'Poppins, sans-serif'
             }}>
-              IMPORTANT INFORMATION
+              {t.genitalPiercing.importantTitle}
             </h3>
             <p style={{
               fontSize: '1rem',
@@ -232,15 +225,14 @@ const GenitalPiercing = () => {
               lineHeight: '1.6',
               marginBottom: '1rem'
             }}>
-              Genital piercings require special consideration and longer healing times. 
-              We provide detailed aftercare instructions and follow-up support.
+              {t.genitalPiercing.importantText1}
             </p>
             <p style={{
               fontSize: '1rem',
               color: '#856404',
               lineHeight: '1.6'
             }}>
-              All clients must be 18+ with valid ID. Consultation required before any procedure.
+              {t.genitalPiercing.importantText2}
             </p>
           </motion.div>
         </div>
@@ -265,7 +257,7 @@ const GenitalPiercing = () => {
               marginBottom: '1rem',
               fontFamily: 'Poppins, sans-serif'
             }}>
-              PRIVATE CONSULTATION
+              {t.genitalPiercing.consultationTitle}
             </h2>
             <p style={{
               fontSize: '1.2rem',
@@ -274,14 +266,14 @@ const GenitalPiercing = () => {
               margin: '0 auto 2rem',
               opacity: 0.9
             }}>
-              Book a private consultation to discuss your options in complete confidence
+              {t.genitalPiercing.consultationDescription}
             </p>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="btn" style={{
+            <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{
               backgroundColor: '#dc2626',
               fontSize: '1.1rem',
               padding: '15px 30px'
             }}>
-              Book Private Consultation
+              {t.genitalPiercing.bookConsultation}
               <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
             </a>
           </motion.div>

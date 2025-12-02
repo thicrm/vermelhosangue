@@ -1,8 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Users, Award, Heart } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 
 const About = () => {
+  const { t } = useLanguage()
   return (
     <div style={{ paddingTop: '120px' }}>
       {/* Hero Section */}
@@ -24,7 +26,7 @@ const About = () => {
               fontFamily: 'Poppins, sans-serif',
               fontWeight: '700'
             }}>
-              ABOUT US
+              {t.about.title}
             </h1>
             <h2 style={{
               fontSize: '2rem',
@@ -32,16 +34,66 @@ const About = () => {
               fontFamily: 'Poppins, sans-serif',
               fontWeight: '400'
             }}>
-              Crafted by hand. Designed with love.
+              {t.about.subtitle}
             </h2>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Images Below Banner */}
+      <section style={{ padding: '0', margin: 0 }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 0,
+          width: '100%'
+        }}>
+          <img 
+            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/40-2.jpeg"
+            alt="Gallery"
+            style={{
+              width: '100%',
+              height: '650px',
+              objectFit: 'cover',
+              display: 'block'
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+          <img 
+            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/41-2.jpeg"
+            alt="Gallery"
+            style={{
+              width: '100%',
+              height: '650px',
+              objectFit: 'cover',
+              display: 'block'
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+          <img 
+            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/42-2.jpeg"
+            alt="Gallery"
+            style={{
+              width: '100%',
+              height: '650px',
+              objectFit: 'cover',
+              display: 'block'
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
         </div>
       </section>
 
       {/* Story Section */}
       <section style={{ padding: '4rem 0' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ alignItems: 'center', gap: '3rem' }}>
+          <div className="grid grid-2" style={{ alignItems: 'flex-start', gap: '3rem' }}>
             <motion.div
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -54,7 +106,7 @@ const About = () => {
                 color: '#dc2626',
                 fontFamily: 'Poppins, sans-serif'
               }}>
-                OUR STORY
+                {t.about.studioTitle}
               </h2>
               <p style={{
                 fontSize: '1.1rem',
@@ -62,9 +114,93 @@ const About = () => {
                 lineHeight: '1.7',
                 color: '#333'
               }}>
-                Founded with a passion for artistry and a commitment to safety, 
-                Vermelho Sangue has been serving the body modification community 
-                with uncompromising standards for over a decade.
+                {t.about.studioText1}
+              </p>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '1.5rem',
+                lineHeight: '1.7',
+                color: '#333'
+              }}>
+                {t.about.studioText2}
+              </p>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '1.5rem',
+                lineHeight: '1.7',
+                color: '#333'
+              }}>
+                {t.about.studioText3}
+              </p>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '1.5rem',
+                lineHeight: '1.7',
+                color: '#333'
+              }}>
+                {t.about.studioText4}
+              </p>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '2rem',
+                lineHeight: '1.7',
+                color: '#dc2626',
+                fontWeight: '600',
+                fontStyle: 'italic'
+              }}>
+                {t.about.studioText5}
+              </p>
+              
+              <h2 style={{
+                fontSize: '3rem',
+                marginBottom: '1.5rem',
+                marginTop: '3rem',
+                color: '#dc2626',
+                fontFamily: 'Poppins, sans-serif'
+              }}>
+                {t.about.aboutMeTitle}
+              </h2>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '1.5rem',
+                lineHeight: '1.7',
+                color: '#333',
+                fontWeight: '500'
+              }}>
+                {t.about.aboutMeText1}
+              </p>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '1.5rem',
+                lineHeight: '1.7',
+                color: '#333'
+              }}>
+                {t.about.aboutMeText2}
+              </p>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '1.5rem',
+                lineHeight: '1.7',
+                color: '#333'
+              }}>
+                {t.about.aboutMeText3}
+              </p>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '1.5rem',
+                lineHeight: '1.7',
+                color: '#dc2626',
+                fontStyle: 'italic'
+              }}>
+                {t.about.aboutMeText4}
+              </p>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '1.5rem',
+                lineHeight: '1.7',
+                color: '#333'
+              }}>
+                {t.about.aboutMeText5}
               </p>
               <p style={{
                 fontSize: '1.1rem',
@@ -72,8 +208,49 @@ const About = () => {
                 lineHeight: '1.7',
                 color: '#333'
               }}>
-                Our studio combines traditional techniques with modern innovations, 
-                ensuring every client receives personalized care and exceptional results.
+                {t.about.aboutMeText6}
+              </p>
+              
+              <h2 style={{
+                fontSize: '3rem',
+                marginBottom: '1.5rem',
+                marginTop: '3rem',
+                color: '#dc2626',
+                fontFamily: 'Poppins, sans-serif'
+              }}>
+                {t.about.servicesTitle}
+              </h2>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '1.5rem',
+                lineHeight: '1.7',
+                color: '#333'
+              }}>
+                {t.about.servicesText1}
+              </p>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '1.5rem',
+                lineHeight: '1.7',
+                color: '#333'
+              }}>
+                {t.about.servicesText2}
+              </p>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '1.5rem',
+                lineHeight: '1.7',
+                color: '#333'
+              }}>
+                {t.about.servicesText3}
+              </p>
+              <p style={{
+                fontSize: '1.1rem',
+                marginBottom: '2rem',
+                lineHeight: '1.7',
+                color: '#333'
+              }}>
+                {t.about.servicesText4}
               </p>
             </motion.div>
             
@@ -83,17 +260,44 @@ const About = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               style={{
-                backgroundColor: '#f5f5f5',
-                height: '400px',
-                borderRadius: '12px',
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#999',
-                fontSize: '1.1rem'
+                flexDirection: 'column',
+                gap: '1.5rem',
+                alignSelf: 'flex-start'
               }}
             >
-              [Studio Interior Image]
+              <div style={{ overflow: 'hidden', width: '100%', aspectRatio: '3/4' }}>
+                <img 
+                  src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/IMG_4290.JPG"
+                  alt="Gallery"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block'
+                  }}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.style.backgroundColor = '#f5f5f5';
+                  }}
+                />
+              </div>
+              <div style={{ overflow: 'hidden', width: '100%', aspectRatio: '3/4' }}>
+                <img 
+                  src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/IMG_4295.JPG"
+                  alt="Gallery"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block'
+                  }}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.style.backgroundColor = '#f5f5f5';
+                  }}
+                />
+              </div>
             </motion.div>
           </div>
         </div>
@@ -115,7 +319,7 @@ const About = () => {
               color: '#dc2626',
               fontFamily: 'Poppins, sans-serif'
             }}>
-              OUR VALUES
+              {t.about.valuesTitle}
             </h2>
           </motion.div>
 
@@ -191,7 +395,7 @@ const About = () => {
               marginBottom: '1rem',
               fontFamily: 'Poppins, sans-serif'
             }}>
-              EXPERIENCE THE DIFFERENCE
+              {t.about.experienceTitle}
             </h2>
             <p style={{
               fontSize: '1.2rem',
@@ -200,9 +404,9 @@ const About = () => {
               margin: '0 auto 2rem',
               opacity: 0.9
             }}>
-              Book your consultation and discover why clients choose Vermelho Sangue
+              {t.about.experienceText}
             </p>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="btn" style={{
+            <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{
               backgroundColor: '#dc2626',
               fontSize: '1.1rem',
               padding: '15px 30px'

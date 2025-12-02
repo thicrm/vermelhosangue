@@ -2,18 +2,20 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Menu, X, Phone, Mail } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
+  const { language, toggleLanguage, t } = useLanguage()
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Piercings', href: '/piercings' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Lobuloplasty', href: '/lobuloplasty' },
-    { name: 'Genital Piercing', href: '/genital-piercing' },
-    { name: 'Body Modification', href: '/body-modification' }
+    { name: 'Home', href: '/' }, // Keep "Home" as is - not translated
+    { name: t.nav.piercings, href: '/piercings' },
+    { name: t.nav.about, href: '/about' },
+    { name: t.nav.lobuloplasty, href: '/lobuloplasty' },
+    { name: t.nav.genitalPiercing, href: '/genital-piercing' },
+    { name: t.nav.bodyModification, href: '/body-modification' }
   ]
 
   const isActive = (path) => location.pathname === path
@@ -37,18 +39,49 @@ const Header = () => {
         fontSize: '0.9rem'
       }}>
         <div className="container flex-between">
-          <div className="flex" style={{ gap: '2rem' }}>
-            <a href="tel:+1234567890" className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
+          <div className="flex" style={{ gap: '2rem', alignItems: 'center' }}>
+            {/* Language Switcher */}
+            <button
+              onClick={toggleLanguage}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: 'white',
+                fontSize: '0.9rem',
+                cursor: 'pointer',
+                padding: '4px 8px',
+                fontFamily: 'Inter, sans-serif',
+                transition: 'opacity 0.3s ease'
+              }}
+              onMouseEnter={(e) => e.target.style.opacity = '0.8'}
+              onMouseLeave={(e) => e.target.style.opacity = '1'}
+            >
+              <span style={{ 
+                fontWeight: language === 'en' ? '600' : '400',
+                opacity: language === 'en' ? '1' : '0.7'
+              }}>
+                EN-US
+              </span>
+              <span style={{ margin: '0 4px', opacity: 0.7 }}>|</span>
+              <span style={{ 
+                fontWeight: language === 'pt' ? '600' : '400',
+                opacity: language === 'pt' ? '1' : '0.7'
+              }}>
+                PT-BR
+              </span>
+            </button>
+            
+            <a href="tel:+5511979826688" className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
               <Phone size={16} />
-              +1 (234) 567-890
+              (11) 97982-6688
             </a>
-            <a href="mailto:info@vermelhosangue.com" className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
+            <a href="mailto:vermelhosanguejewelry@gmail.com" className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
               <Mail size={16} />
-              info@vermelhosangue.com
+              vermelhosanguejewelry@gmail.com
             </a>
           </div>
           <div>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" style={{
+            <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" style={{
               backgroundColor: 'white',
               color: '#dc2626',
               padding: '4px 12px',
@@ -199,7 +232,7 @@ const Header = () => {
                   </Link>
                 ))}
                 <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid #e5e5e5' }}>
-                  <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="btn" style={{ width: '100%', textAlign: 'center' }}>
+                  <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{ width: '100%', textAlign: 'center' }}>
                     WhatsApp Booking
                   </a>
                 </div>

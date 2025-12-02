@@ -1,8 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Zap, Palette, Award } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 
 const BodyModification = () => {
+  const { t } = useLanguage()
   return (
     <div style={{ paddingTop: '120px' }}>
       {/* Hero Section */}
@@ -24,7 +26,7 @@ const BodyModification = () => {
               fontFamily: 'Poppins, sans-serif',
               fontWeight: '700'
             }}>
-              BODY MODIFICATION
+              {t.nav.bodyModification}
             </h1>
             <h2 style={{
               fontSize: '2rem',
@@ -32,7 +34,7 @@ const BodyModification = () => {
               fontFamily: 'Poppins, sans-serif',
               fontWeight: '400'
             }}>
-              Advanced body modification artistry
+              {t.services.bodyModifications.lobuloplasty.title} • {t.services.bodyModifications.keloidRemoval.title} • {t.services.bodyModifications.coinslot.title} • {t.services.bodyModifications.tongueBifurcation.title}
             </h2>
             <p style={{
               fontSize: '1.2rem',
@@ -41,8 +43,7 @@ const BodyModification = () => {
               margin: '0 auto 3rem',
               lineHeight: '1.6'
             }}>
-              Explore the art of body modification with our experienced practitioners. 
-              From implants to scarification, we create unique expressions of individuality.
+              {t.about.servicesText2}
             </p>
           </motion.div>
         </div>
@@ -71,25 +72,32 @@ const BodyModification = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-3">
+          <div className="grid grid-2" style={{ gap: '2rem' }}>
             {[
               {
                 icon: <Zap size={40} />,
-                title: 'Subdermal Implants',
-                description: 'Surgical placement of custom implants beneath the skin for unique body art',
-                features: ['Custom shapes', 'Medical-grade materials', 'Professional placement']
+                title: t.services.bodyModifications.lobuloplasty.title,
+                description: t.services.bodyModifications.lobuloplasty.description
               },
               {
                 icon: <Palette size={40} />,
-                title: 'Scarification',
-                description: 'Artistic scarification techniques for permanent body art',
-                features: ['Custom designs', 'Sterile procedures', 'Expert aftercare']
+                title: t.services.bodyModifications.keloidRemoval.title,
+                description: t.services.bodyModifications.keloidRemoval.description
               },
               {
                 icon: <Award size={40} />,
-                title: 'Surface Piercings',
-                description: 'Advanced surface piercing techniques for unique placements',
-                features: ['Specialized jewelry', 'Precision placement', 'Long-term stability']
+                title: t.services.bodyModifications.blowoutRemoval.title,
+                description: t.services.bodyModifications.blowoutRemoval.description
+              },
+              {
+                icon: <Zap size={40} />,
+                title: t.services.bodyModifications.coinslot.title,
+                description: t.services.bodyModifications.coinslot.description
+              },
+              {
+                icon: <Palette size={40} />,
+                title: t.services.bodyModifications.tongueBifurcation.title,
+                description: t.services.bodyModifications.tongueBifurcation.description
               }
             ].map((service, index) => (
               <motion.div
@@ -121,17 +129,11 @@ const BodyModification = () => {
                 <p style={{
                   marginBottom: '1.5rem',
                   color: '#666',
-                  lineHeight: '1.6'
+                  lineHeight: '1.7',
+                  fontSize: '1rem'
                 }}>
                   {service.description}
                 </p>
-                <div className="flex-column" style={{ gap: '0.5rem' }}>
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} style={{ fontSize: '0.9rem', color: '#666' }}>
-                      • {feature}
-                    </div>
-                  ))}
-                </div>
               </motion.div>
             ))}
           </div>
@@ -293,7 +295,7 @@ const BodyModification = () => {
             }}>
               Book a consultation to discuss your body modification goals
             </p>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="btn" style={{
+            <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{
               backgroundColor: '#dc2626',
               fontSize: '1.1rem',
               padding: '15px 30px'

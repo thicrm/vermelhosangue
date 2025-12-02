@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { LanguageProvider } from './context/LanguageContext'
 import AgeVerification from './components/AgeVerification'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Piercings from './pages/Piercings'
 import About from './pages/About'
@@ -40,27 +42,57 @@ function App() {
     )
   }
 
-  if (!isVerified) {
-    return <AgeVerification onVerify={handleAgeVerification} />
-  }
-
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/piercings" element={<Piercings />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/lobuloplasty" element={<Lobuloplasty />} />
-            <Route path="/genital-piercing" element={<GenitalPiercing />} />
-            <Route path="/body-modification" element={<BodyModification />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="App">
+          {/* Render homepage behind age verification when not verified */}
+          {!isVerified && (
+            <div style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              overflow: 'hidden',
+              filter: 'blur(15px)',
+              transform: 'scale(1.05)',
+              zIndex: 1
+            }}>
+              <Header />
+              <main style={{ paddingTop: '120px' }}>
+                <Home />
+              </main>
+              <Footer />
+            </div>
+          )}
+          
+          {/* Age verification overlay */}
+          {!isVerified && (
+            <AgeVerification onVerify={handleAgeVerification} />
+          )}
+
+          {/* Normal app content when verified */}
+          {isVerified && (
+            <>
+              <Header />
+              <main>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/piercings" element={<Piercings />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/lobuloplasty" element={<Lobuloplasty />} />
+                  <Route path="/genital-piercing" element={<GenitalPiercing />} />
+                  <Route path="/body-modification" element={<BodyModification />} />
+                </Routes>
+              </main>
+              <Footer />
+            </>
+          )}
+        </div>
+      </Router>
+    </LanguageProvider>
   )
 }
 

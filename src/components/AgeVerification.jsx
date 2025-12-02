@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../context/LanguageContext'
 
 const AgeVerification = ({ onVerify }) => {
   const [isVisible, setIsVisible] = useState(true)
+  const { t } = useLanguage()
 
   const handleConfirm = () => {
     setIsVisible(false)
@@ -31,26 +33,42 @@ const AgeVerification = ({ onVerify }) => {
         left: 0,
         width: '100vw',
         height: '100vh',
-        backgroundColor: '#000',
         zIndex: 9999,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'white'
+        color: '#333'
       }}
     >
+      {/* Blur overlay - blurs the homepage behind */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backdropFilter: 'blur(20px)',
+        backgroundColor: 'rgba(255, 255, 255, 0.75)',
+        zIndex: 1
+      }} />
+
+      {/* Content */}
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
         className="verification-content"
         style={{
+          position: 'relative',
+          zIndex: 2,
           textAlign: 'center',
           maxWidth: '600px',
-          padding: '2rem',
-          backgroundColor: '#111',
-          borderRadius: '12px',
-          border: '2px solid #dc2626'
+          padding: '3rem',
+          backgroundColor: 'rgba(255, 255, 255, 0.98)',
+          borderRadius: '16px',
+          border: '2px solid #dc2626',
+          boxShadow: '0 20px 60px rgba(220, 38, 38, 0.3)',
+          backdropFilter: 'blur(10px)'
         }}
       >
         <motion.div
@@ -102,18 +120,20 @@ const AgeVerification = ({ onVerify }) => {
           <h2 style={{ 
             fontSize: '2rem', 
             marginBottom: '2rem',
-            fontFamily: 'Playfair Display, serif'
+            fontFamily: 'Poppins, sans-serif',
+            color: '#dc2626',
+            fontWeight: '700'
           }}>
-            AGE VERIFICATION REQUIRED
+            {t.ageVerification.title}
           </h2>
           
           <p style={{ 
             fontSize: '1.2rem', 
             marginBottom: '2rem',
-            lineHeight: '1.6'
+            lineHeight: '1.6',
+            color: '#333'
           }}>
-            This website contains adult content related to body piercing and modification services. 
-            You must be 18 years or older to access this site.
+            {t.ageVerification.description}
           </p>
           
           <div style={{ 
@@ -123,7 +143,7 @@ const AgeVerification = ({ onVerify }) => {
             flexWrap: 'wrap'
           }}>
             <motion.button
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, backgroundColor: '#b91c1c' }}
               whileTap={{ scale: 0.95 }}
               onClick={handleConfirm}
               style={{
@@ -131,18 +151,20 @@ const AgeVerification = ({ onVerify }) => {
                 backgroundColor: '#dc2626',
                 color: 'white',
                 border: 'none',
-                borderRadius: '6px',
+                borderRadius: '8px',
                 fontSize: '1.1rem',
                 fontWeight: '600',
                 cursor: 'pointer',
-                minWidth: '150px'
+                minWidth: '150px',
+                fontFamily: 'Poppins, sans-serif',
+                transition: 'all 0.3s ease'
               }}
             >
-              I AM 18+
+              {t.ageVerification.confirm}
             </motion.button>
             
             <motion.button
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, backgroundColor: '#dc2626', color: 'white' }}
               whileTap={{ scale: 0.95 }}
               onClick={handleDeny}
               style={{
@@ -150,23 +172,26 @@ const AgeVerification = ({ onVerify }) => {
                 backgroundColor: 'transparent',
                 color: '#dc2626',
                 border: '2px solid #dc2626',
-                borderRadius: '6px',
+                borderRadius: '8px',
                 fontSize: '1.1rem',
                 fontWeight: '600',
                 cursor: 'pointer',
-                minWidth: '150px'
+                minWidth: '150px',
+                fontFamily: 'Poppins, sans-serif',
+                transition: 'all 0.3s ease'
               }}
             >
-              I AM UNDER 18
+              {t.ageVerification.deny}
             </motion.button>
           </div>
           
           <p style={{ 
             fontSize: '0.9rem', 
             marginTop: '2rem',
-            opacity: 0.7
+            opacity: 0.7,
+            color: '#666'
           }}>
-            By clicking "I AM 18+", you confirm that you are of legal age to view adult content.
+            {t.ageVerification.disclaimer}
           </p>
         </motion.div>
       </motion.div>
