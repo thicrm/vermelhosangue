@@ -2,20 +2,21 @@ export const en = {
   // Navigation (keep as is)
   nav: {
     home: 'Home',
-    piercings: 'Piercings',
     about: 'About Us',
+    piercings: 'Piercings',
+    care: 'Care',
     lobuloplasty: 'Lobuloplasty',
     genitalPiercing: 'Genital Piercing',
     bodyModification: 'Body Modification'
   },
   // Homepage
   home: {
-    heroTitle: 'Designed with love. Crafted by hand.',
+    heroTitle: 'HIGH END FASHION PIERCING JEWELRY',
     heroDescription: 'Professional body piercing and modification services with the highest standards of safety, artistry, and ethical practice.',
     exploreServices: 'Explore Services',
     bookConsultation: 'Book Consultation',
-    ourWork: 'OUR WORK',
-    ourWorkDescription: 'Professional body piercing and modification artistry',
+    ourWork: 'TO MODIFY IS TO CROSS BOUNDARIES',
+    ourWorkDescription: '',
     ourServices: 'OUR SERVICES',
     ourServicesDescription: 'Professional body modification services with uncompromising standards',
     craftedByHand: 'CRAFTED BY HAND',
@@ -102,6 +103,37 @@ export const en = {
       genital: 'Genital piercings',
       microdermal: 'Microdermal',
       surface: 'Surface',
+      piercingTypes: {
+        title: 'PIERCING TYPES',
+        description: 'Explore our comprehensive range of professional piercing services',
+        categories: {
+          ear: 'Ear Piercings',
+          facial: 'Facial Piercings',
+          body: 'Body Piercings'
+        }
+      },
+      process: {
+        title: 'OUR PROCESS',
+        description: 'From consultation to aftercare, we ensure every step meets our high standards',
+        steps: {
+          consultation: {
+            title: 'Consultation',
+            description: 'We discuss your goals, assess anatomy, and recommend the best approach'
+          },
+          preparation: {
+            title: 'Preparation',
+            description: 'Sterile setup, jewelry selection, and marking the perfect placement'
+          },
+          procedure: {
+            title: 'Procedure',
+            description: 'Professional piercing performed with precision and care'
+          },
+          aftercare: {
+            title: 'Aftercare',
+            description: 'Detailed instructions and ongoing support for optimal healing'
+          }
+        }
+      },
       gauged: {
         title: 'Gauged Piercings',
         description: 'Piercings performed with jewelry starting from 2 mm thickness. Can be applied to different regions, such as lobes, septum, navel, nipples, and intimate piercings, always respecting the anatomy and comfort of each person.'
@@ -130,6 +162,11 @@ export const en = {
       }
     },
     care: {
+      heroTitle: 'CARE',
+      heroDescription: 'Professional care to keep your jewelry and piercings in perfect condition',
+      additionalServices: 'Additional Services',
+      ctaTitle: 'Schedule Your Care',
+      ctaDescription: 'Keep your jewelry and piercings in perfect condition with our professional services',
       jewelryMaintenance: {
         title: 'Jewelry Maintenance',
         description: 'With time of use — especially when jewelry stays for long periods without being removed — it is normal for residues to accumulate in the settings, behind the stones, and in the internal parts of the jewelry. Therefore, we offer complete maintenance with deep cleaning in an ultrasonic tank, reaching areas that cannot be cleaned at home. This care restores the original shine, leaves the stones impeccably clean, and makes the jewelry look new again. Chic, safe, and performed with all the care and Vermelho Sangue standard.'

@@ -22,19 +22,19 @@ const Piercings = () => {
 
   const piercingTypes = [
     {
-      category: 'Ear Piercings',
+      category: t.services.bodyPiercings.piercingTypes.categories.ear,
       piercings: [
         'Lobe', 'Helix', 'Tragus', 'Daith', 'Conch', 'Rook', 'Forward Helix', 'Industrial'
       ]
     },
     {
-      category: 'Facial Piercings',
+      category: t.services.bodyPiercings.piercingTypes.categories.facial,
       piercings: [
         'Nose', 'Septum', 'Eyebrow', 'Lip', 'Labret', 'Medusa', 'Monroe', 'Cheek'
       ]
     },
     {
-      category: 'Body Piercings',
+      category: t.services.bodyPiercings.piercingTypes.categories.body,
       piercings: [
         'Navel', 'Nipple', 'Surface', 'Dermal', 'Microdermal', 'Corset', 'Scarification'
       ]
@@ -43,48 +43,6 @@ const Piercings = () => {
 
   return (
     <div style={{ paddingTop: '120px' }}>
-      {/* Hero Section */}
-      <section style={{
-        background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
-        color: 'white',
-        padding: '4rem 0',
-        textAlign: 'center'
-      }}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 style={{
-              fontSize: '4rem',
-              marginBottom: '1rem',
-              fontFamily: 'Poppins, sans-serif',
-              fontWeight: '700'
-            }}>
-              {t.services.bodyPiercings.title}
-            </h1>
-            <h2 style={{
-              fontSize: '2rem',
-              marginBottom: '2rem',
-              fontFamily: 'Poppins, sans-serif',
-              fontWeight: '400'
-            }}>
-              {t.services.bodyPiercings.basic} • {t.services.bodyPiercings.genital} • {t.services.bodyPiercings.microdermal} • {t.services.bodyPiercings.surface}
-            </h2>
-            <p style={{
-              fontSize: '1.2rem',
-              marginBottom: '3rem',
-              maxWidth: '600px',
-              margin: '0 auto 3rem',
-              lineHeight: '1.6'
-            }}>
-              {t.about.servicesText1}
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Images Section */}
       <section style={{ padding: '0', margin: 0 }}>
         <div style={{
@@ -151,10 +109,10 @@ const Piercings = () => {
               color: '#dc2626',
               fontFamily: 'Poppins, sans-serif'
             }}>
-              PIERCING TYPES
+              {t.services.bodyPiercings.piercingTypes.title}
             </h2>
             <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-              Explore our comprehensive range of professional piercing services
+              {t.services.bodyPiercings.piercingTypes.description}
             </p>
           </motion.div>
 
@@ -216,10 +174,10 @@ const Piercings = () => {
               color: '#dc2626',
               fontFamily: 'Poppins, sans-serif'
             }}>
-              OUR PROCESS
+              {t.services.bodyPiercings.process.title}
             </h2>
             <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-              From consultation to aftercare, we ensure every step meets our high standards
+              {t.services.bodyPiercings.process.description}
             </p>
           </motion.div>
 
@@ -233,23 +191,23 @@ const Piercings = () => {
             {[
               {
                 step: '01',
-                title: 'Consultation',
-                description: 'We discuss your goals, assess anatomy, and recommend the best approach'
+                title: t.services.bodyPiercings.process.steps.consultation.title,
+                description: t.services.bodyPiercings.process.steps.consultation.description
               },
               {
                 step: '02',
-                title: 'Preparation',
-                description: 'Sterile setup, jewelry selection, and marking the perfect placement'
+                title: t.services.bodyPiercings.process.steps.preparation.title,
+                description: t.services.bodyPiercings.process.steps.preparation.description
               },
               {
                 step: '03',
-                title: 'Procedure',
-                description: 'Professional piercing performed with precision and care'
+                title: t.services.bodyPiercings.process.steps.procedure.title,
+                description: t.services.bodyPiercings.process.steps.procedure.description
               },
               {
                 step: '04',
-                title: 'Aftercare',
-                description: 'Detailed instructions and ongoing support for optimal healing'
+                title: t.services.bodyPiercings.process.steps.aftercare.title,
+                description: t.services.bodyPiercings.process.steps.aftercare.description
               }
             ].map((step, index) => (
               <motion.div
@@ -368,108 +326,55 @@ const Piercings = () => {
         </div>
       </section>
 
-      {/* Jewelry Section */}
+      {/* Jewelry Images Section */}
       <section style={{ padding: '4rem 0', backgroundColor: '#f9f9f9' }}>
         <div className="container">
-          <div className="grid grid-2" style={{ alignItems: 'center', gap: '3rem' }}>
-            <motion.div
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 style={{
-                fontSize: '3rem',
-                marginBottom: '1.5rem',
-                color: '#dc2626',
-                fontFamily: 'Poppins, sans-serif'
-              }}>
-                PREMIUM JEWELRY
-              </h2>
-              <p style={{
-                fontSize: '1.1rem',
-                marginBottom: '1.5rem',
-                lineHeight: '1.7',
-                color: '#333'
-              }}>
-                We use only the highest quality jewelry from trusted manufacturers. 
-                All pieces are made from implant-grade materials and come with 
-                lifetime guarantees.
-              </p>
-              <div className="flex-column" style={{ gap: '1rem', marginBottom: '2rem' }}>
-                {[
-                  'Implant-grade titanium',
-                  '14k and 18k gold options',
-                  'Surgical steel alternatives',
-                  'Custom sizing available',
-                  'Lifetime warranty'
-                ].map((feature, index) => (
-                  <div key={index} className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
-                    <Star size={16} style={{ color: '#dc2626' }} />
-                    <span>{feature}</span>
-                  </div>
-                ))}
-              </div>
-              <Link to="/about" className="btn">
-                Learn More About Our Standards
-                <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
-              </Link>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: 0,
-                height: '500px'
-              }}
-            >
-              <div
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '2rem',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}
+          >
+            <div style={{ overflow: 'hidden', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', aspectRatio: '1/1' }}>
+              <img 
+                src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4289(1).JPG"
+                alt="Premium Jewelry Collection"
                 style={{
-                  overflow: 'hidden'
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block'
                 }}
-              >
-                <img 
-                  src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4289(1).JPG"
-                  alt="Premium Jewelry Collection"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block'
-                  }}
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.style.backgroundColor = '#f5f5f5';
-                  }}
-                />
-              </div>
-              <div
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.style.backgroundColor = '#f5f5f5';
+                }}
+              />
+            </div>
+            <div style={{ overflow: 'hidden', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', aspectRatio: '1/1' }}>
+              <img 
+                src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4381.jpg"
+                alt="Premium Jewelry Collection"
                 style={{
-                  overflow: 'hidden'
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block'
                 }}
-              >
-                <img 
-                  src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4381.jpg"
-                  alt="Premium Jewelry Collection"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block'
-                  }}
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.style.backgroundColor = '#f5f5f5';
-                  }}
-                />
-              </div>
-            </motion.div>
-          </div>
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.style.backgroundColor = '#f5f5f5';
+                }}
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 

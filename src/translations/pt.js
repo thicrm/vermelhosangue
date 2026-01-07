@@ -2,25 +2,26 @@ export const pt = {
   // Navigation (keep as is)
   nav: {
     home: 'Home',
-    piercings: 'Piercings',
     about: 'Sobre Nós',
+    piercings: 'Piercings',
+    care: 'Cuidados',
     lobuloplasty: 'Lobuloplastia',
     genitalPiercing: 'Piercing Genital',
     bodyModification: 'Modificação Corporal'
   },
   // Homepage
   home: {
-    heroTitle: 'Desenhado com amor. Feito à mão.',
-    heroDescription: 'Serviços profissionais de piercing e modificação corporal com os mais altos padrões de segurança, arte e prática ética.',
+    heroTitle: 'HIGH END FASHION PIERCING JEWELRY',
+    heroDescription: 'Serviços profissionais de piercing e modificação corporal com os mais altos padrões de segurança.',
     exploreServices: 'Explorar Serviços',
     bookConsultation: 'Agendar Consulta',
-    ourWork: 'NOSSO TRABALHO',
-    ourWorkDescription: 'Arte profissional de piercing e modificação corporal',
+    ourWork: 'MODIFICAR É ATRAVESSAR LIMITES',
+    ourWorkDescription: '',
     ourServices: 'NOSSOS SERVIÇOS',
     ourServicesDescription: 'Serviços profissionais de modificação corporal com padrões inabaláveis',
-    craftedByHand: 'FEITO À MÃO',
-    craftedDescription1: 'Cada piercing é realizado com atenção meticulosa aos detalhes, usando apenas materiais da mais alta qualidade e seguindo protocolos rigorosos de segurança. Nossos artistas experientes combinam expertise técnica com visão artística.',
-    craftedDescription2: 'Acreditamos em práticas éticas, materiais sustentáveis e criar experiências significativas que celebram a expressão individual.',
+    craftedByHand: 'AUTENTICIDADE COMO FORMA DE EXPRESSÃO',
+    craftedDescription1: 'Cada procedimento é realizado com o padrão mais alto em qualidade de jóias, atenção meticulosa aos detalhes e seguindo protocolos rigorosos de saúde.',
+    craftedDescription2: '',
     ourStory: 'Nossa História',
     readyToBegin: 'PRONTO PARA COMEÇAR SUA JORNADA?',
     readyDescription: 'Agende sua consulta hoje e descubra a arte da modificação corporal profissional',
@@ -102,6 +103,37 @@ export const pt = {
       genital: 'Perfurações genitais',
       microdermal: 'Microdermal',
       surface: 'Surface',
+      piercingTypes: {
+        title: 'TIPOS DE PIERCING',
+        description: 'Explore nossa ampla gama de serviços profissionais de piercing',
+        categories: {
+          ear: 'Perfurações de Orelha',
+          facial: 'Face e Tronco',
+          body: 'Corpo'
+        }
+      },
+      process: {
+        title: 'NOSSO PROCESSO',
+        description: 'Da consulta aos cuidados pós-procedimento, garantimos que cada etapa atenda aos nossos altos padrões',
+        steps: {
+          consultation: {
+            title: 'Consulta',
+            description: 'Discutimos seus objetivos, avaliamos a anatomia e recomendamos a melhor abordagem'
+          },
+          preparation: {
+            title: 'Preparação',
+            description: 'Ambiente estéril, seleção de joias e marcação do posicionamento perfeito'
+          },
+          procedure: {
+            title: 'Procedimento',
+            description: 'Perfuração profissional realizada com precisão e cuidado'
+          },
+          aftercare: {
+            title: 'Cuidados Pós-Procedimento',
+            description: 'Instruções detalhadas e suporte contínuo para cicatrização ideal'
+          }
+        }
+      },
       gauged: {
         title: 'Perfurações Calibrosas',
         description: 'Perfurações realizadas com joias a partir de 2 mm de espessura. Podem ser aplicadas em diferentes regiões, como lóbulos, septo, umbigo, mamilos e perfurações íntimas, sempre respeitando a anatomia e o conforto de cada pessoa.'
@@ -130,6 +162,11 @@ export const pt = {
       }
     },
     care: {
+      heroTitle: 'CUIDADOS',
+      heroDescription: 'Cuidados profissionais para manter suas joias e perfurações em perfeito estado',
+      additionalServices: 'Serviços Adicionais',
+      ctaTitle: 'Agende Seu Cuidado',
+      ctaDescription: 'Mantenha suas joias e perfurações em perfeito estado com nossos serviços profissionais',
       jewelryMaintenance: {
         title: 'Manutenção de Joias',
         description: 'Com o tempo de uso — especialmente quando a joia fica longos períodos sem ser removida — é normal que se acumulem resíduos nos encaixes, atrás das pedras e nas partes internas da jóia. Por isso, oferecemos uma manutenção completa, com limpeza profunda em cuba ultrassônica, alcançando áreas que não é possível higienizar em casa. Esse cuidado devolve o brilho original, deixa as pedras impecavelmente limpas e faz a joia parecer nova de novo. Chique, seguro e realizado com todo o cuidado e o padrão Vermelho Sangue.'

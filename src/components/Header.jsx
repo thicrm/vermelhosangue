@@ -11,11 +11,10 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', href: '/' }, // Keep "Home" as is - not translated
-    { name: t.nav.piercings, href: '/piercings' },
     { name: t.nav.about, href: '/about' },
-    { name: t.nav.lobuloplasty, href: '/lobuloplasty' },
-    { name: t.nav.genitalPiercing, href: '/genital-piercing' },
-    { name: t.nav.bodyModification, href: '/body-modification' }
+    { name: t.nav.piercings, href: '/piercings' },
+    { name: t.nav.care, href: '/care' },
+    { name: t.nav.genitalPiercing, href: '/genital-piercing' }
   ]
 
   const isActive = (path) => location.pathname === path
@@ -57,17 +56,17 @@ const Header = () => {
               onMouseLeave={(e) => e.target.style.opacity = '1'}
             >
               <span style={{ 
-                fontWeight: language === 'en' ? '600' : '400',
-                opacity: language === 'en' ? '1' : '0.7'
-              }}>
-                EN-US
-              </span>
-              <span style={{ margin: '0 4px', opacity: 0.7 }}>|</span>
-              <span style={{ 
                 fontWeight: language === 'pt' ? '600' : '400',
                 opacity: language === 'pt' ? '1' : '0.7'
               }}>
                 PT-BR
+              </span>
+              <span style={{ margin: '0 4px', opacity: 0.7 }}>|</span>
+              <span style={{ 
+                fontWeight: language === 'en' ? '600' : '400',
+                opacity: language === 'en' ? '1' : '0.7'
+              }}>
+                EN-US
               </span>
             </button>
             
@@ -97,9 +96,9 @@ const Header = () => {
 
       {/* Main navigation */}
       <nav style={{ padding: '1rem 0' }}>
-        <div className="container flex-between">
+        <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo */}
-          <Link to="/" style={{ textDecoration: 'none' }}>
+          <Link to="/" style={{ textDecoration: 'none', flexShrink: 0 }}>
             <motion.div
               whileHover={{ scale: 1.05 }}
               style={{
@@ -152,8 +151,8 @@ const Header = () => {
             </motion.div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="flex" style={{ gap: '2rem', alignItems: 'center' }}>
+          {/* Desktop Navigation - Centered */}
+          <div className="flex" style={{ gap: '2rem', alignItems: 'center', flex: 1, justifyContent: 'center' }}>
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -193,7 +192,8 @@ const Header = () => {
               background: 'none',
               border: 'none',
               cursor: 'pointer',
-              padding: '0.5rem'
+              padding: '0.5rem',
+              flexShrink: 0
             }}
             className="mobile-menu-btn"
           >

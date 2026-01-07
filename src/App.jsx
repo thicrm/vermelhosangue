@@ -8,9 +8,8 @@ import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Piercings from './pages/Piercings'
 import About from './pages/About'
-import Lobuloplasty from './pages/Lobuloplasty'
+import Care from './pages/Care'
 import GenitalPiercing from './pages/GenitalPiercing'
-import BodyModification from './pages/BodyModification'
 
 function App() {
   const [isVerified, setIsVerified] = useState(false)
@@ -80,11 +79,10 @@ function App() {
               <main>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/piercings" element={<Piercings />} />
                   <Route path="/about" element={<About />} />
-                  <Route path="/lobuloplasty" element={<Lobuloplasty />} />
+                  <Route path="/piercings" element={<Piercings />} />
+                  <Route path="/care" element={<Care />} />
                   <Route path="/genital-piercing" element={<GenitalPiercing />} />
-                  <Route path="/body-modification" element={<BodyModification />} />
                 </Routes>
               </main>
               <Footer />

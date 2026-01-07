@@ -7,39 +7,6 @@ const About = () => {
   const { t } = useLanguage()
   return (
     <div style={{ paddingTop: '120px' }}>
-      {/* Hero Section */}
-      <section style={{
-        background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
-        color: 'white',
-        padding: '4rem 0',
-        textAlign: 'center'
-      }}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 style={{
-              fontSize: '4rem',
-              marginBottom: '1rem',
-              fontFamily: 'Poppins, sans-serif',
-              fontWeight: '700'
-            }}>
-              {t.about.title}
-            </h1>
-            <h2 style={{
-              fontSize: '2rem',
-              marginBottom: '2rem',
-              fontFamily: 'Poppins, sans-serif',
-              fontWeight: '400'
-            }}>
-              {t.about.subtitle}
-            </h2>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Images Below Banner */}
       <section style={{ padding: '0', margin: 0 }}>
         <div style={{
@@ -150,11 +117,42 @@ const About = () => {
               }}>
                 {t.about.studioText5}
               </p>
-              
+            </motion.div>
+            
+            {/* Row 1, Col 2: First Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              style={{ overflow: 'hidden', width: '100%', aspectRatio: '3/4' }}
+            >
+              <img 
+                src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/IMG_4290.JPG"
+                alt="Gallery"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.style.backgroundColor = '#f5f5f5';
+                }}
+              />
+            </motion.div>
+
+            {/* Row 2, Col 1: About Me */}
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <h2 style={{
                 fontSize: '3rem',
                 marginBottom: '1.5rem',
-                marginTop: '3rem',
                 color: '#dc2626',
                 fontFamily: 'Poppins, sans-serif'
               }}>
@@ -210,94 +208,30 @@ const About = () => {
               }}>
                 {t.about.aboutMeText6}
               </p>
-              
-              <h2 style={{
-                fontSize: '3rem',
-                marginBottom: '1.5rem',
-                marginTop: '3rem',
-                color: '#dc2626',
-                fontFamily: 'Poppins, sans-serif'
-              }}>
-                {t.about.servicesTitle}
-              </h2>
-              <p style={{
-                fontSize: '1.1rem',
-                marginBottom: '1.5rem',
-                lineHeight: '1.7',
-                color: '#333'
-              }}>
-                {t.about.servicesText1}
-              </p>
-              <p style={{
-                fontSize: '1.1rem',
-                marginBottom: '1.5rem',
-                lineHeight: '1.7',
-                color: '#333'
-              }}>
-                {t.about.servicesText2}
-              </p>
-              <p style={{
-                fontSize: '1.1rem',
-                marginBottom: '1.5rem',
-                lineHeight: '1.7',
-                color: '#333'
-              }}>
-                {t.about.servicesText3}
-              </p>
-              <p style={{
-                fontSize: '1.1rem',
-                marginBottom: '2rem',
-                lineHeight: '1.7',
-                color: '#333'
-              }}>
-                {t.about.servicesText4}
-              </p>
             </motion.div>
-            
+
+            {/* Row 2, Col 2: Second Image */}
             <motion.div
               initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1.5rem',
-                alignSelf: 'flex-start'
-              }}
+              style={{ overflow: 'hidden', width: '100%', aspectRatio: '3/4' }}
             >
-              <div style={{ overflow: 'hidden', width: '100%', aspectRatio: '3/4' }}>
-                <img 
-                  src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/IMG_4290.JPG"
-                  alt="Gallery"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block'
-                  }}
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.style.backgroundColor = '#f5f5f5';
-                  }}
-                />
-              </div>
-              <div style={{ overflow: 'hidden', width: '100%', aspectRatio: '3/4' }}>
-                <img 
-                  src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/IMG_4295.JPG"
-                  alt="Gallery"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block'
-                  }}
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.style.backgroundColor = '#f5f5f5';
-                  }}
-                />
-              </div>
+              <img 
+                src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/IMG_4295.JPG"
+                alt="Gallery"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.style.backgroundColor = '#f5f5f5';
+                }}
+              />
             </motion.div>
           </div>
         </div>

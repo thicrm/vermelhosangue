@@ -1,0 +1,7 @@
+Image Links - Modificação Corporal Page
+
+1. https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Modifica%C3%A7%C3%B5es%20corporais/f1eea2d2-fe31-4595-8b11-08ea44ec828e.jpg
+   (Service Card Image - Home Page)
+
+Note: The BodyModification page itself did not contain direct image links in the component code, only the service card image from the Home page.
+

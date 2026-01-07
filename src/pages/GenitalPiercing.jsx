@@ -1,66 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Shield, Lock, CheckCircle } from 'lucide-react'
+import { ArrowRight, Shield, CheckCircle } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
 const GenitalPiercing = () => {
   const { t } = useLanguage()
   return (
     <div style={{ paddingTop: '120px' }}>
-      {/* Hero Section */}
-      <section style={{
-        background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
-        color: 'white',
-        padding: '4rem 0',
-        textAlign: 'center'
-      }}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 style={{
-              fontSize: '4rem',
-              marginBottom: '1rem',
-              fontFamily: 'Poppins, sans-serif',
-              fontWeight: '700'
-            }}>
-              {t.genitalPiercing.title}
-            </h1>
-            <h2 style={{
-              fontSize: '2rem',
-              marginBottom: '2rem',
-              fontFamily: 'Poppins, sans-serif',
-              fontWeight: '400'
-            }}>
-              {t.genitalPiercing.subtitle}
-            </h2>
-            <p style={{
-              fontSize: '1.2rem',
-              marginBottom: '3rem',
-              maxWidth: '600px',
-              margin: '0 auto 3rem',
-              lineHeight: '1.6'
-            }}>
-              {t.genitalPiercing.description}
-            </p>
-            <div style={{
-              backgroundColor: 'rgba(255,255,255,0.1)',
-              padding: '1rem 2rem',
-              borderRadius: '8px',
-              display: 'inline-block',
-              marginBottom: '2rem'
-            }}>
-              <div className="flex" style={{ alignItems: 'center', gap: '0.5rem', justifyContent: 'center' }}>
-                <Lock size={20} />
-                <span style={{ fontWeight: '600' }}>{t.genitalPiercing.ageRestriction}</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Services */}
       <section style={{ padding: '4rem 0' }}>
         <div className="container">

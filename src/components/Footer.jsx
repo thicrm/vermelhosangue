@@ -59,14 +59,8 @@ const Footer = () => {
               <Link to="/piercings" style={{ color: 'white', textDecoration: 'none' }}>
                 Body Piercings
               </Link>
-              <Link to="/lobuloplasty" style={{ color: 'white', textDecoration: 'none' }}>
-                Lobuloplasty
-              </Link>
               <Link to="/genital-piercing" style={{ color: 'white', textDecoration: 'none' }}>
                 Genital Piercing
-              </Link>
-              <Link to="/body-modification" style={{ color: 'white', textDecoration: 'none' }}>
-                Body Modification
               </Link>
             </div>
           </div>

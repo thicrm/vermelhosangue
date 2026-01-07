@@ -210,15 +210,12 @@ const Home = () => {
           >
             <h2 style={{
               fontSize: '3rem',
-              marginBottom: '1rem',
+              marginBottom: '3rem',
               color: '#dc2626',
               fontFamily: 'Poppins, sans-serif'
             }}>
               {t.home.ourWork}
             </h2>
-            <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-              {t.home.ourWorkDescription}
-            </p>
           </motion.div>
 
           {/* Media Grid */}
@@ -340,15 +337,26 @@ const Home = () => {
           >
             <h2 style={{
               fontSize: '3rem',
-              marginBottom: '1rem',
+              marginBottom: '2rem',
               color: '#dc2626',
               fontFamily: 'Poppins, sans-serif'
             }}>
               {t.home.ourServices}
             </h2>
-            <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>
-              {t.home.ourServicesDescription}
-            </p>
+            <div style={{ fontSize: '1.1rem', color: '#666', maxWidth: '800px', margin: '0 auto', lineHeight: '1.7', textAlign: 'justify' }}>
+              <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
+                {t.about.servicesText1}
+              </p>
+              <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
+                {t.about.servicesText2}
+              </p>
+              <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
+                {t.about.servicesText3}
+              </p>
+              <p style={{ marginBottom: '0', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
+                {t.about.servicesText4}
+              </p>
+            </div>
           </motion.div>
 
           <motion.div
@@ -484,6 +492,29 @@ const Home = () => {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Lobuloplasty Text Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            style={{ marginTop: '4rem', textAlign: 'center' }}
+          >
+            <h2 style={{
+              fontSize: '3rem',
+              marginBottom: '2rem',
+              color: '#dc2626',
+              fontFamily: 'Poppins, sans-serif'
+            }}>
+              {t.services.bodyModifications.lobuloplasty.title}
+            </h2>
+            <div style={{ fontSize: '1.1rem', color: '#666', maxWidth: '800px', margin: '0 auto', lineHeight: '1.7', textAlign: 'justify' }}>
+              <p style={{ marginBottom: '0', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
+                {t.services.bodyModifications.lobuloplasty.description}
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -513,14 +544,16 @@ const Home = () => {
               }}>
                 {t.home.craftedDescription1}
               </p>
-              <p style={{
-                fontSize: '1.1rem',
-                marginBottom: '2rem',
-                lineHeight: '1.7',
-                color: '#333'
-              }}>
-                {t.home.craftedDescription2}
-              </p>
+              {t.home.craftedDescription2 && (
+                <p style={{
+                  fontSize: '1.1rem',
+                  marginBottom: '2rem',
+                  lineHeight: '1.7',
+                  color: '#333'
+                }}>
+                  {t.home.craftedDescription2}
+                </p>
+              )}
               <Link to="/about" className="btn">
                 {t.home.ourStory}
                 <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
