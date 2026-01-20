@@ -90,7 +90,6 @@ export const en = {
     servicesText1: 'The studio offers from basic body piercings to advanced techniques, including genital piercings, microdermals, and surfaces.',
     servicesText2: 'We also perform body modification procedures, such as lobuloplasty, keloid removal, tongue bifurcation, and coinslot — always focusing on anatomy, harmony, and healthy healing.',
     servicesText3: 'Additionally, we offer jewelry maintenance, professional cleaning, and post-procedure follow-up with free returns, ensuring that healing evolves in the best way for your body.',
-    servicesText4: 'Downsize is performed at the ideal moment, always respecting the natural healing time of each anatomy.',
     valuesTitle: 'OUR VALUES',
     experienceTitle: 'EXPERIENCE THE DIFFERENCE',
     experienceText: 'Book your consultation and discover why clients choose Vermelho Sangue'

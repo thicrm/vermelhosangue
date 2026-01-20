@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Users, Award, Heart } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
 const About = () => {
@@ -233,79 +233,6 @@ const About = () => {
                 }}
               />
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section style={{ padding: '4rem 0', backgroundColor: '#f9f9f9' }}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            style={{ textAlign: 'center', marginBottom: '3rem' }}
-          >
-            <h2 style={{
-              fontSize: '3rem',
-              marginBottom: '1rem',
-              color: '#dc2626',
-              fontFamily: 'Poppins, sans-serif'
-            }}>
-              {t.about.valuesTitle}
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-3">
-            {[
-              {
-                icon: <Heart size={40} />,
-                title: 'Safety First',
-                description: 'Every procedure follows strict safety protocols and uses only implant-grade materials'
-              },
-              {
-                icon: <Award size={40} />,
-                title: 'Artistic Excellence',
-                description: 'We combine technical expertise with artistic vision to create beautiful, meaningful modifications'
-              },
-              {
-                icon: <Users size={40} />,
-                title: 'Personalized Care',
-                description: 'Each client receives individual attention and customized treatment plans'
-              }
-            ].map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                style={{
-                  backgroundColor: 'white',
-                  padding: '2rem',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-                  textAlign: 'center',
-                  border: '1px solid #e5e5e5'
-                }}
-              >
-                <div style={{ color: '#dc2626', marginBottom: '1rem' }}>
-                  {value.icon}
-                </div>
-                <h3 style={{
-                  fontSize: '1.5rem',
-                  marginBottom: '1rem',
-                  color: '#333',
-                  fontFamily: 'Poppins, sans-serif'
-                }}>
-                  {value.title}
-                </h3>
-                <p style={{ color: '#666', lineHeight: '1.6' }}>
-                  {value.description}
-                </p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

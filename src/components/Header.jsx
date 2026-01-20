@@ -50,7 +50,7 @@ const Header = () => {
                 cursor: 'pointer',
                 padding: '4px 8px',
                 fontFamily: 'Inter, sans-serif',
-                transition: 'opacity 0.3s ease'
+                transition: 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
               }}
               onMouseEnter={(e) => e.target.style.opacity = '0.8'}
               onMouseLeave={(e) => e.target.style.opacity = '1'}
@@ -84,7 +84,7 @@ const Header = () => {
               backgroundColor: 'white',
               color: '#dc2626',
               padding: '4px 12px',
-              borderRadius: '4px',
+              borderRadius: '10px',
               fontWeight: '600',
               fontSize: '0.8rem'
             }}>
@@ -163,7 +163,8 @@ const Header = () => {
                   fontWeight: isActive(item.href) ? '600' : '400',
                   fontSize: '1rem',
                   position: 'relative',
-                  padding: '0.5rem 0'
+                  padding: '0.5rem 0',
+                  transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
                 }}
               >
                 {item.name}
@@ -216,18 +217,19 @@ const Header = () => {
             <div className="container">
               <div className="flex-column" style={{ gap: '1rem' }}>
                 {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    style={{
-                      textDecoration: 'none',
-                      color: isActive(item.href) ? '#dc2626' : '#333',
-                      fontWeight: isActive(item.href) ? '600' : '400',
-                      fontSize: '1.1rem',
-                      padding: '0.5rem 0'
-                    }}
-                  >
+              <Link
+                key={item.name}
+                to={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                style={{
+                  textDecoration: 'none',
+                  color: isActive(item.href) ? '#dc2626' : '#333',
+                  fontWeight: isActive(item.href) ? '600' : '400',
+                  fontSize: '1.1rem',
+                  padding: '0.5rem 0',
+                  transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
+              >
                     {item.name}
                   </Link>
                 ))}

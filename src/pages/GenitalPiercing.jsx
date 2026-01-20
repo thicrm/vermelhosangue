@@ -56,7 +56,7 @@ const GenitalPiercing = () => {
                 style={{
                   backgroundColor: '#f9f9f9',
                   padding: '2rem',
-                  borderRadius: '12px',
+                  borderRadius: '10px',
                   border: '1px solid #e5e5e5'
                 }}
               >
@@ -127,7 +127,7 @@ const GenitalPiercing = () => {
               style={{
                 backgroundColor: '#f5f5f5',
                 height: '400px',
-                borderRadius: '12px',
+                borderRadius: '10px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -152,7 +152,7 @@ const GenitalPiercing = () => {
             style={{
               backgroundColor: '#fff3cd',
               border: '1px solid #ffeaa7',
-              borderRadius: '12px',
+              borderRadius: '10px',
               padding: '2rem',
               textAlign: 'center'
             }}

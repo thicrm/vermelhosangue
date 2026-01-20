@@ -34,11 +34,11 @@ export const pt = {
       },
       lobuloplasty: {
         title: 'Lobuloplastia',
-        description: 'Serviços especializados de reparo e reconstrução do lóbulo da orelha'
+        description: 'Procedimento que consiste em remodelar o lóbulo. Seja ele por fissura de brinco, expansões, rompimentos ou até mesmo melhorar a estrutura da anatomia.'
       },
       bodyModification: {
         title: 'Modificação Corporal',
-        description: 'Procedimentos avançados de modificação corporal com visão artística'
+        description: 'procedimentos de modificação corporal, como remoção de quelóide, bifurcação de língua e coinslot — sempre com foco em anatomia, harmonia e cicatrização saudável.'
       },
       learnMore: 'Saiba Mais'
     }
@@ -90,7 +90,6 @@ export const pt = {
     servicesText1: 'O estúdio oferece desde perfurações corporais básicas até técnicas avançadas, incluindo perfurações genitais, microdermais e surfaces.',
     servicesText2: 'Também realizamos procedimentos de modificação corporal, como lobuloplastia, remoção de quelóide, bifurcação de língua e coinslot — sempre com foco em anatomia, harmonia e cicatrização saudável.',
     servicesText3: 'Além disso, oferecemos manutenção de joias, limpeza profissional e acompanhamento pós-procedimento com retornos gratuitos, garantindo que a cicatrização evolua da melhor forma para o seu corpo.',
-    servicesText4: 'O downsize é realizado no momento ideal, sempre respeitando o tempo natural de cicatrização de cada anatomia.',
     valuesTitle: 'NOSSOS VALORES',
     experienceTitle: 'EXPERIMENTE A DIFERENÇA',
     experienceText: 'Agende sua consulta e descubra por que clientes escolhem o Vermelho Sangue'

@@ -235,7 +235,7 @@ const Home = () => {
             <motion.div
               whileHover={{ scale: 1.02 }}
               style={{
-                borderRadius: '12px',
+                borderRadius: '10px',
                 overflow: 'hidden',
                 boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
               }}
@@ -255,7 +255,7 @@ const Home = () => {
             <motion.div
               whileHover={{ scale: 1.02 }}
               style={{
-                borderRadius: '12px',
+                borderRadius: '10px',
                 overflow: 'hidden',
                 boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
               }}
@@ -350,11 +350,8 @@ const Home = () => {
               <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
                 {t.about.servicesText2}
               </p>
-              <p style={{ marginBottom: '1.5rem', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
-                {t.about.servicesText3}
-              </p>
               <p style={{ marginBottom: '0', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
-                {t.about.servicesText4}
+                {t.about.servicesText3}
               </p>
             </div>
           </motion.div>
@@ -395,7 +392,7 @@ const Home = () => {
                 whileHover={{ y: -10, scale: 1.02 }}
                 style={{
                   position: 'relative',
-                  borderRadius: '12px',
+                  borderRadius: '10px',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
                   textAlign: 'center',
                   overflow: 'hidden',
@@ -471,8 +468,8 @@ const Home = () => {
                     gap: '0.5rem',
                     backgroundColor: '#dc2626',
                     padding: '10px 20px',
-                    borderRadius: '6px',
-                    transition: 'all 0.3s ease',
+                    borderRadius: '10px',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                     textShadow: 'none',
                     boxShadow: '0 4px 15px rgba(220, 38, 38, 0.4)'
                   }}
@@ -491,29 +488,6 @@ const Home = () => {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
-
-          {/* Lobuloplasty Text Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            style={{ marginTop: '4rem', textAlign: 'center' }}
-          >
-            <h2 style={{
-              fontSize: '3rem',
-              marginBottom: '2rem',
-              color: '#dc2626',
-              fontFamily: 'Poppins, sans-serif'
-            }}>
-              {t.services.bodyModifications.lobuloplasty.title}
-            </h2>
-            <div style={{ fontSize: '1.1rem', color: '#666', maxWidth: '800px', margin: '0 auto', lineHeight: '1.7', textAlign: 'justify' }}>
-              <p style={{ marginBottom: '0', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
-                {t.services.bodyModifications.lobuloplasty.description}
-              </p>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -566,7 +540,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               style={{
-                borderRadius: '12px',
+                borderRadius: '10px',
                 overflow: 'hidden',
                 boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
                 aspectRatio: '4/3'

@@ -71,7 +71,7 @@ const Care = () => {
               style={{
                 backgroundColor: 'white',
                 padding: '2.5rem',
-                borderRadius: '12px',
+                borderRadius: '10px',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
               }}
             >
@@ -105,7 +105,7 @@ const Care = () => {
               style={{
                 backgroundColor: 'white',
                 padding: '2.5rem',
-                borderRadius: '12px',
+                borderRadius: '10px',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
               }}
             >
@@ -143,7 +143,7 @@ const Care = () => {
             style={{
               backgroundColor: 'white',
               padding: '2.5rem',
-              borderRadius: '12px',
+              borderRadius: '10px',
               boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
               textAlign: 'center'
             }}

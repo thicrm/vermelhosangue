@@ -43,10 +43,32 @@ const Footer = () => {
               {t.footer.description}
             </p>
             <div className="flex" style={{ gap: '1rem' }}>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: '#dc2626' }}>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ 
+                color: '#dc2626',
+                transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.color = '#b91c1c';
+                e.target.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.color = '#dc2626';
+                e.target.style.transform = 'translateY(0)';
+              }}>
                 <Instagram size={24} />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{ color: '#dc2626' }}>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{ 
+                color: '#dc2626',
+                transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.color = '#b91c1c';
+                e.target.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.color = '#dc2626';
+                e.target.style.transform = 'translateY(0)';
+              }}>
                 <Facebook size={24} />
               </a>
             </div>
@@ -56,10 +78,22 @@ const Footer = () => {
           <div>
             <h4 style={{ marginBottom: '1rem', color: '#dc2626' }}>{t.footer.services}</h4>
             <div className="flex-column" style={{ gap: '0.5rem' }}>
-              <Link to="/piercings" style={{ color: 'white', textDecoration: 'none' }}>
+              <Link to="/piercings" style={{ 
+                color: 'white', 
+                textDecoration: 'none',
+                transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#dc2626'}
+              onMouseLeave={(e) => e.target.style.color = 'white'}>
                 Body Piercings
               </Link>
-              <Link to="/genital-piercing" style={{ color: 'white', textDecoration: 'none' }}>
+              <Link to="/genital-piercing" style={{ 
+                color: 'white', 
+                textDecoration: 'none',
+                transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#dc2626'}
+              onMouseLeave={(e) => e.target.style.color = 'white'}>
                 Genital Piercing
               </Link>
             </div>
@@ -71,13 +105,25 @@ const Footer = () => {
             <div className="flex-column" style={{ gap: '0.5rem' }}>
               <div className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
                 <Phone size={16} />
-                <a href="tel:+5511979826688" style={{ color: 'white', textDecoration: 'none' }}>
+                <a href="tel:+5511979826688" style={{ 
+                  color: 'white', 
+                  textDecoration: 'none',
+                  transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
+                onMouseEnter={(e) => e.target.style.color = '#dc2626'}
+                onMouseLeave={(e) => e.target.style.color = 'white'}>
                   (11) 97982-6688
                 </a>
               </div>
               <div className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
                 <Mail size={16} />
-                <a href="mailto:vermelhosanguejewelry@gmail.com" style={{ color: 'white', textDecoration: 'none' }}>
+                <a href="mailto:vermelhosanguejewelry@gmail.com" style={{ 
+                  color: 'white', 
+                  textDecoration: 'none',
+                  transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
+                onMouseEnter={(e) => e.target.style.color = '#dc2626'}
+                onMouseLeave={(e) => e.target.style.color = 'white'}>
                   vermelhosanguejewelry@gmail.com
                 </a>
               </div>
@@ -127,10 +173,36 @@ const Footer = () => {
             {t.footer.copyright}
           </p>
           <div className="flex" style={{ gap: '2rem', fontSize: '0.9rem' }}>
-            <Link to="/about" style={{ color: 'white', textDecoration: 'none', opacity: 0.7 }}>
+            <Link to="/about" style={{ 
+              color: 'white', 
+              textDecoration: 'none', 
+              opacity: 0.7,
+              transition: 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.opacity = '1';
+              e.target.style.color = '#dc2626';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.opacity = '0.7';
+              e.target.style.color = 'white';
+            }}>
               {t.footer.privacyPolicy}
             </Link>
-            <Link to="/about" style={{ color: 'white', textDecoration: 'none', opacity: 0.7 }}>
+            <Link to="/about" style={{ 
+              color: 'white', 
+              textDecoration: 'none', 
+              opacity: 0.7,
+              transition: 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.opacity = '1';
+              e.target.style.color = '#dc2626';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.opacity = '0.7';
+              e.target.style.color = 'white';
+            }}>
               {t.footer.termsOfService}
             </Link>
           </div>

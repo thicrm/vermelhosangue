@@ -130,7 +130,7 @@ const Piercings = () => {
                 style={{
                   backgroundColor: 'white',
                   padding: '2rem',
-                  borderRadius: '12px',
+                  borderRadius: '10px',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
                   border: '1px solid #e5e5e5'
                 }}
@@ -342,7 +342,7 @@ const Piercings = () => {
               margin: '0 auto'
             }}
           >
-            <div style={{ overflow: 'hidden', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', aspectRatio: '1/1' }}>
+            <div style={{ overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', aspectRatio: '1/1' }}>
               <img 
                 src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4289(1).JPG"
                 alt="Premium Jewelry Collection"
@@ -358,7 +358,7 @@ const Piercings = () => {
                 }}
               />
             </div>
-            <div style={{ overflow: 'hidden', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', aspectRatio: '1/1' }}>
+            <div style={{ overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', aspectRatio: '1/1' }}>
               <img 
                 src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4381.jpg"
                 alt="Premium Jewelry Collection"
