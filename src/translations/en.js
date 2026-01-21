@@ -109,6 +109,37 @@ export const en = {
           ear: 'Ear Piercings',
           facial: 'Facial Piercings',
           body: 'Body Piercings'
+        },
+        piercings: {
+          ear: [
+            'Lobe',
+            'Helix',
+            'Tragus',
+            'Daith',
+            'Conch',
+            'Rook',
+            'Forward Helix',
+            'Industrial'
+          ],
+          facial: [
+            'Nose',
+            'Septum',
+            'Eyebrow',
+            'Lip',
+            'Labret',
+            'Medusa',
+            'Monroe',
+            'Cheek'
+          ],
+          body: [
+            'Navel',
+            'Nipple',
+            'Surface',
+            'Dermal',
+            'Microdermal',
+            'Corset',
+            'Scarification'
+          ]
         }
       },
       process: {

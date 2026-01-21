@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles, RefreshCw, CheckCircle } from 'lucide-react'
+import { ArrowRight, CheckCircle } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
 const Care = () => {
@@ -55,142 +55,89 @@ const Care = () => {
       </section>
 
       {/* Services Section */}
-      <section style={{ padding: '4rem 0', backgroundColor: '#f9f9f9' }}>
+      <section style={{ padding: '4rem 0', backgroundColor: '#fff' }}>
         <div className="container">
-          <motion.div
-            variants={staggerChildren}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid grid-2"
-            style={{ gap: '3rem', marginBottom: '4rem' }}
-          >
-            {/* Jewelry Maintenance */}
-            <motion.div
-              variants={fadeInUp}
-              style={{
-                backgroundColor: 'white',
-                padding: '2.5rem',
-                borderRadius: '10px',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
-              }}
-            >
-              <div style={{
-                color: '#dc2626',
-                marginBottom: '1.5rem'
-              }}>
-                <Sparkles size={48} />
-              </div>
-              <h3 style={{
-                fontSize: '2rem',
-                marginBottom: '1rem',
-                color: '#dc2626',
-                fontFamily: 'Poppins, sans-serif'
-              }}>
-                {t.services.care.jewelryMaintenance.title}
-              </h3>
-              <p style={{
-                fontSize: '1.1rem',
-                lineHeight: '1.7',
-                color: '#333',
-                marginBottom: '1.5rem'
-              }}>
-                {t.services.care.jewelryMaintenance.description}
-              </p>
-            </motion.div>
-
-            {/* Downsize */}
-            <motion.div
-              variants={fadeInUp}
-              style={{
-                backgroundColor: 'white',
-                padding: '2.5rem',
-                borderRadius: '10px',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
-              }}
-            >
-              <div style={{
-                color: '#dc2626',
-                marginBottom: '1.5rem'
-              }}>
-                <RefreshCw size={48} />
-              </div>
-              <h3 style={{
-                fontSize: '2rem',
-                marginBottom: '1rem',
-                color: '#dc2626',
-                fontFamily: 'Poppins, sans-serif'
-              }}>
-                {t.services.care.downsize.title}
-              </h3>
-              <p style={{
-                fontSize: '1.1rem',
-                lineHeight: '1.7',
-                color: '#333',
-                marginBottom: '1.5rem'
-              }}>
-                {t.services.care.downsize.description}
-              </p>
-            </motion.div>
-          </motion.div>
-
-          {/* Additional Services */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            style={{
-              backgroundColor: 'white',
-              padding: '2.5rem',
-              borderRadius: '10px',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-              textAlign: 'center'
-            }}
           >
-            <div style={{
-              color: '#dc2626',
-              marginBottom: '1.5rem',
-              display: 'flex',
-              justifyContent: 'center'
-            }}>
-              <CheckCircle size={48} />
-            </div>
-            <h3 style={{
-              fontSize: '2rem',
-              marginBottom: '1.5rem',
-              color: '#dc2626',
-              fontFamily: 'Poppins, sans-serif'
-            }}>
-              {t.services.care.additionalServices}
-            </h3>
-            <div style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-              alignItems: 'center'
-            }}>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                fontSize: '1.1rem',
-                color: '#333'
+            {/* Jewelry Maintenance */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              style={{ marginBottom: '4rem' }}
+            >
+              <h2 style={{
+                fontSize: '3rem',
+                marginBottom: '2rem',
+                color: '#dc2626',
+                fontFamily: 'Poppins, sans-serif',
+                textAlign: 'center'
               }}>
-                <CheckCircle size={20} color="#dc2626" />
-                <span>{t.services.care.freeFollowUps}</span>
+                {t.services.care.jewelryMaintenance.title}
+              </h2>
+              <div style={{ fontSize: '1.1rem', color: '#666', maxWidth: '800px', margin: '0 auto', lineHeight: '1.7', textAlign: 'justify' }}>
+                <p style={{ marginBottom: '0', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
+                  {t.services.care.jewelryMaintenance.description}
+                </p>
               </div>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                fontSize: '1.1rem',
-                color: '#333'
+            </motion.div>
+
+            {/* Downsize */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              style={{ marginBottom: '4rem' }}
+            >
+              <h2 style={{
+                fontSize: '3rem',
+                marginBottom: '2rem',
+                color: '#dc2626',
+                fontFamily: 'Poppins, sans-serif',
+                textAlign: 'center'
               }}>
-                <CheckCircle size={20} color="#dc2626" />
-                <span>{t.services.care.guidance}</span>
+                {t.services.care.downsize.title}
+              </h2>
+              <div style={{ fontSize: '1.1rem', color: '#666', maxWidth: '800px', margin: '0 auto', lineHeight: '1.7', textAlign: 'justify' }}>
+                <p style={{ marginBottom: '0', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
+                  {t.services.care.downsize.description}
+                </p>
               </div>
-            </div>
+            </motion.div>
+
+            {/* Additional Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 style={{
+                fontSize: '3rem',
+                marginBottom: '2rem',
+                color: '#dc2626',
+                fontFamily: 'Poppins, sans-serif',
+                textAlign: 'center'
+              }}>
+                {t.services.care.additionalServices}
+              </h2>
+              <div style={{ fontSize: '1.1rem', color: '#666', maxWidth: '800px', margin: '0 auto', lineHeight: '1.7', textAlign: 'justify' }}>
+                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
+                  <CheckCircle size={20} style={{ color: '#dc2626', marginTop: '2px', flexShrink: 0 }} />
+                  <span>{t.services.care.freeFollowUps}</span>
+                </div>
+                <div style={{ marginBottom: '0', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '1.1rem', color: '#666', lineHeight: '1.7', fontFamily: 'Inter, sans-serif', fontWeight: 'normal', textAlign: 'justify' }}>
+                  <CheckCircle size={20} style={{ color: '#dc2626', marginTop: '2px', flexShrink: 0 }} />
+                  <span>{t.services.care.guidance}</span>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

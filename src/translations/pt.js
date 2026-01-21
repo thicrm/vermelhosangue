@@ -109,6 +109,37 @@ export const pt = {
           ear: 'Perfurações de Orelha',
           facial: 'Face e Tronco',
           body: 'Corpo'
+        },
+        piercings: {
+          ear: [
+            'Lóbulo',
+            'Hélix',
+            'Trágus',
+            'Daith',
+            'Côncha',
+            'Rook',
+            'Forward Helix',
+            'Industrial'
+          ],
+          facial: [
+            'Nariz',
+            'Septum',
+            'Sobrancelha',
+            'Lábio',
+            'Labret',
+            'Medusa',
+            'Monroe',
+            'Bochecha'
+          ],
+          body: [
+            'Umbigo',
+            'Mamilo',
+            'Surface',
+            'Dermal',
+            'Microdermal',
+            'Corset',
+            'Escarificação'
+          ]
         }
       },
       process: {

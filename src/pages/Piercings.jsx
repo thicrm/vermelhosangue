@@ -23,21 +23,15 @@ const Piercings = () => {
   const piercingTypes = [
     {
       category: t.services.bodyPiercings.piercingTypes.categories.ear,
-      piercings: [
-        'Lobe', 'Helix', 'Tragus', 'Daith', 'Conch', 'Rook', 'Forward Helix', 'Industrial'
-      ]
+      piercings: t.services.bodyPiercings.piercingTypes.piercings.ear
     },
     {
       category: t.services.bodyPiercings.piercingTypes.categories.facial,
-      piercings: [
-        'Nose', 'Septum', 'Eyebrow', 'Lip', 'Labret', 'Medusa', 'Monroe', 'Cheek'
-      ]
+      piercings: t.services.bodyPiercings.piercingTypes.piercings.facial
     },
     {
       category: t.services.bodyPiercings.piercingTypes.categories.body,
-      piercings: [
-        'Navel', 'Nipple', 'Surface', 'Dermal', 'Microdermal', 'Corset', 'Scarification'
-      ]
+      piercings: t.services.bodyPiercings.piercingTypes.piercings.body
     }
   ]
 
@@ -51,45 +45,75 @@ const Piercings = () => {
           gap: 0,
           width: '100%'
         }}>
-          <img 
-            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_9969.jpg"
-            alt="Body Piercings"
+          <div
             style={{
               width: '100%',
               height: '650px',
-              objectFit: 'cover',
-              display: 'block'
+              overflow: 'hidden'
             }}
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
-          <img 
-            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_0928_edit.jpg"
-            alt="Body Piercings"
+          >
+            <motion.img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_9969.jpg"
+              alt="Body Piercings"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </div>
+          <div
             style={{
               width: '100%',
               height: '650px',
-              objectFit: 'cover',
-              display: 'block'
+              overflow: 'hidden'
             }}
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
-          <img 
-            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_1016.jpg"
-            alt="Body Piercings"
+          >
+            <motion.img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_0928_edit.jpg"
+              alt="Body Piercings"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </div>
+          <div
             style={{
               width: '100%',
               height: '650px',
-              objectFit: 'cover',
-              display: 'block'
+              overflow: 'hidden'
             }}
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
+          >
+            <motion.img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_1016.jpg"
+              alt="Body Piercings"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </div>
         </div>
       </section>
 

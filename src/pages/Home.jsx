@@ -106,96 +106,6 @@ const Home = () => {
           </video>
         </div>
 
-        {/* Overlay Content */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          bottom: 0,
-          zIndex: 2,
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          alignItems: 'flex-end',
-          justifyContent: 'center',
-          padding: '0 0 6rem',
-          textAlign: 'center',
-          backgroundColor: 'rgba(0, 0, 0, 0.3)'
-        }}>
-          {/* Empty left column */}
-          <div></div>
-          
-          {/* Middle column - Text content aligned with middle video */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'flex-end',
-              padding: '4rem 1.5rem',
-              width: '100%'
-            }}
-          >
-            {/* Text */}
-            <h2 style={{
-              fontSize: '1.54rem',
-              marginBottom: '1rem',
-              color: 'white',
-              fontFamily: 'Poppins, sans-serif',
-              fontWeight: '400',
-              textShadow: '0 0 20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.6), 0 2px 10px rgba(0, 0, 0, 0.9)',
-              filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.3))',
-              width: '100%'
-            }}>
-              {t.home.heroTitle}
-            </h2>
-            <p style={{
-              fontSize: '0.85rem',
-              marginBottom: '2rem',
-              width: '100%',
-              lineHeight: '1.6',
-              color: 'white',
-              textShadow: '0 0 20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.6), 0 2px 10px rgba(0, 0, 0, 0.9)',
-              filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.2))'
-            }}>
-              {t.home.heroDescription}
-            </p>
-            <div className="flex" style={{ gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', width: '100%' }}>
-              <Link to="/piercings" className="btn" style={{
-                fontSize: '0.85rem',
-                padding: '11px 24px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                backgroundColor: '#dc2626',
-                color: 'white',
-                boxShadow: '0 0 20px rgba(220, 38, 38, 0.6), 0 0 40px rgba(220, 38, 38, 0.4), 0 4px 15px rgba(0, 0, 0, 0.5)',
-                textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
-              }}>
-                <span>{t.home.exploreServices}</span>
-                <ArrowRight size={15} />
-              </Link>
-              <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{
-                fontSize: '0.85rem',
-                padding: '11px 24px',
-                borderColor: 'white',
-                color: 'white',
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                boxShadow: '0 0 20px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2), 0 4px 15px rgba(0, 0, 0, 0.5)',
-                textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
-                backdropFilter: 'blur(5px)'
-              }}>
-                {t.home.bookConsultation}
-              </a>
-            </div>
-          </motion.div>
-          
-          {/* Empty right column */}
-          <div></div>
-        </div>
       </section>
 
       {/* Media Gallery */}
@@ -283,45 +193,75 @@ const Home = () => {
           gap: 0,
           width: '100%'
         }}>
-          <img 
-            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/28-2.jpeg"
-            alt="Body Piercings"
+          <div
             style={{
               width: '100%',
               height: '650px',
-              objectFit: 'cover',
-              display: 'block'
+              overflow: 'hidden'
             }}
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
-          <img 
-            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/31-2.jpeg"
-            alt="Lobuloplasty"
+          >
+            <motion.img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/28-2.jpeg"
+              alt="Body Piercings"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </div>
+          <div
             style={{
               width: '100%',
               height: '650px',
-              objectFit: 'cover',
-              display: 'block'
+              overflow: 'hidden'
             }}
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
-          <img 
-            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_1017.jpg"
-            alt="Body Modification"
+          >
+            <motion.img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/31-2.jpeg"
+              alt="Lobuloplasty"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </div>
+          <div
             style={{
               width: '100%',
               height: '650px',
-              objectFit: 'cover',
-              display: 'block'
+              overflow: 'hidden'
             }}
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
+          >
+            <motion.img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_1017.jpg"
+              alt="Body Modification"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </div>
         </div>
       </section>
 
@@ -579,7 +519,7 @@ const Home = () => {
               marginBottom: '1rem',
               fontFamily: 'Poppins, sans-serif'
             }}>
-              {t.home.readyToBegin}
+              {t.home.heroTitle}
             </h2>
             <p style={{
               fontSize: '1.2rem',
@@ -588,23 +528,27 @@ const Home = () => {
               margin: '0 auto 2rem',
               opacity: 0.9
             }}>
-              {t.home.readyDescription}
+              {t.home.heroDescription}
             </p>
             <div className="flex" style={{ gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{
+              <Link to="/piercings" className="btn" style={{
                 backgroundColor: '#dc2626',
                 fontSize: '1.1rem',
-                padding: '15px 30px'
+                padding: '15px 30px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem'
               }}>
-                {t.home.whatsappBooking}
-              </a>
-              <a href="mailto:vermelhosanguejewelry@gmail.com" className="btn btn-outline" style={{
+                {t.home.exploreServices}
+                <ArrowRight size={20} />
+              </Link>
+              <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{
                 borderColor: 'white',
                 color: 'white',
                 fontSize: '1.1rem',
                 padding: '15px 30px'
               }}>
-                {t.home.emailConsultation}
+                {t.home.bookConsultation}
               </a>
             </div>
           </motion.div>

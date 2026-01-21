@@ -15,45 +15,75 @@ const About = () => {
           gap: 0,
           width: '100%'
         }}>
-          <img 
-            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/40-2.jpeg"
-            alt="Gallery"
+          <div
             style={{
               width: '100%',
               height: '650px',
-              objectFit: 'cover',
-              display: 'block'
+              overflow: 'hidden'
             }}
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
-          <img 
-            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/41-2.jpeg"
-            alt="Gallery"
+          >
+            <motion.img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/40-2.jpeg"
+              alt="Gallery"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </div>
+          <div
             style={{
               width: '100%',
               height: '650px',
-              objectFit: 'cover',
-              display: 'block'
+              overflow: 'hidden'
             }}
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
-          <img 
-            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/42-2.jpeg"
-            alt="Gallery"
+          >
+            <motion.img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/41-2.jpeg"
+              alt="Gallery"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </div>
+          <div
             style={{
               width: '100%',
               height: '650px',
-              objectFit: 'cover',
-              display: 'block'
+              overflow: 'hidden'
             }}
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
+          >
+            <motion.img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/42-2.jpeg"
+              alt="Gallery"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </div>
         </div>
       </section>
 
