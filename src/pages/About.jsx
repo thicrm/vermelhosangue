@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Star } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
 const About = () => {
@@ -264,6 +264,178 @@ const About = () => {
               />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#fff' }}>
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '2rem',
+              maxWidth: '800px',
+              margin: '0 auto'
+            }}
+          >
+            {/* Review 1 - Marcela Vieira */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ 
+                y: -10, 
+                scale: 1.02,
+                transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
+              }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              style={{
+                backgroundColor: '#f9f9f9',
+                padding: '2rem',
+                borderRadius: '10px',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                border: '1px solid #e5e5e5'
+              }}
+            >
+              {/* Stars */}
+              <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '1rem' }}>
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={18} fill="#FFD700" color="#FFD700" />
+                ))}
+              </div>
+              {/* Review Text */}
+              <p style={{
+                fontSize: '0.95rem',
+                lineHeight: '1.7',
+                color: '#333',
+                fontStyle: 'italic',
+                marginBottom: '1.5rem',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: '300'
+              }}>
+                "Fiz lobuloplastia nas duas orelhas com a Giulia e estou muito satisfeita com o trabalho! Ela arrasa demais, confiança total em algo tão delicado. Além de ser uma ótima profissional ela é muito gente boa e o studo é lindo 💕"
+              </p>
+              {/* Author */}
+              <p style={{
+                fontSize: '0.9rem',
+                color: '#666',
+                textAlign: 'right',
+                fontStyle: 'normal',
+                marginTop: '1rem',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: '300'
+              }}>
+                - Marcela Vieira
+              </p>
+            </motion.div>
+
+            {/* Review 2 - Milena Bottega */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ 
+                y: -10, 
+                scale: 1.02,
+                transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
+              }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              style={{
+                backgroundColor: '#f9f9f9',
+                padding: '2rem',
+                borderRadius: '10px',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                border: '1px solid #e5e5e5'
+              }}
+            >
+              {/* Stars */}
+              <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '1rem' }}>
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={18} fill="#FFD700" color="#FFD700" />
+                ))}
+              </div>
+              {/* Review Text */}
+              <p style={{
+                fontSize: '0.95rem',
+                lineHeight: '1.7',
+                color: '#333',
+                fontStyle: 'italic',
+                marginBottom: '1.5rem',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: '300'
+              }}>
+                "Furei minhas duas sobrancelhas com a Giulia e foi mto fofo ver toda a preocupação dela em deixar os piercings certinhos na assimetria. Fiquei realmente mto feliz com o cuidado com todo o processo! Acabei de conhecer e já considero pakas com certeza voltarei ❤️‍🔥"
+              </p>
+              {/* Author */}
+              <p style={{
+                fontSize: '0.9rem',
+                color: '#666',
+                textAlign: 'right',
+                fontStyle: 'normal',
+                marginTop: '1rem',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: '300'
+              }}>
+                - Milena Bottega
+              </p>
+            </motion.div>
+
+            {/* Review 3 - Artthur Sampaio */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ 
+                y: -10, 
+                scale: 1.02,
+                transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
+              }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              style={{
+                backgroundColor: '#f9f9f9',
+                padding: '2rem',
+                borderRadius: '10px',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                border: '1px solid #e5e5e5'
+              }}
+            >
+              {/* Stars */}
+              <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '1rem' }}>
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={18} fill="#FFD700" color="#FFD700" />
+                ))}
+              </div>
+              {/* Review Text */}
+              <p style={{
+                fontSize: '0.95rem',
+                lineHeight: '1.7',
+                color: '#333',
+                fontStyle: 'italic',
+                marginBottom: '1.5rem',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: '300'
+              }}>
+                "Fiz minha bifurcação de língua com a Giulia e estou extremamente satisfeito com o resultado! Desde o primeiro contato, ela foi super atenciosa, tirou todas as minhas dúvidas e me passou muita segurança. O procedimento foi realizado com muito cuidado, técnica e profissionalismo. Ambiente limpo, bem preparado e com todo o suporte necessário. O resultado ficou excelente, exatamente como eu esperava — e o acompanhamento no pós foi impecável, com todas as orientações e suporte que precisei. A Giulia é uma profissional dedicada, responsável e apaixonada pelo que faz. Recomendo de olhos fechados pra quem busca um trabalho sério, seguro e de qualidade. Obrigado por tudo!"
+              </p>
+              {/* Author */}
+              <p style={{
+                fontSize: '0.9rem',
+                color: '#666',
+                textAlign: 'right',
+                fontStyle: 'normal',
+                marginTop: '1rem',
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: '300'
+              }}>
+                - Artthur Sampaio
+              </p>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 

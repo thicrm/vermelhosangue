@@ -151,6 +151,7 @@ const Piercings = () => {
               <motion.div
                 key={index}
                 variants={fadeInUp}
+                whileHover={{ y: -10, scale: 1.02 }}
                 style={{
                   backgroundColor: 'white',
                   padding: '2rem',

@@ -51,6 +51,11 @@ const GenitalPiercing = () => {
                 key={index}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ 
+                  y: -10, 
+                  scale: 1.02,
+                  transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
+                }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 style={{

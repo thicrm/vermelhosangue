@@ -1,0 +1,74 @@
+GALLERY PAGE DEVELOPMENT INSTRUCTIONS
+==========================================
+
+PAGE OVERVIEW
+-------------
+Create a brand new page for the website called "Gallery"
+- Include Header and Footer (same as other pages)
+- Page should be accessible via routing
+
+DATA SOURCE
+-----------
+- All images and media will be sourced from: pictures_index.txt
+- Categories available:
+  * PIERCINGS
+  * MODIFICAÇOES CORPORAIS (Body Mods)
+  * LOBULOPLASTIA
+  * PERFURAÇOES GENITAIS (Genital Piercings)
+
+LAYOUT STRUCTURE
+----------------
+1. Header (standard site header)
+2. Filter Section (below header)
+3. Gallery Grid (below filter)
+
+FILTER SECTION
+--------------
+Filter Options:
+- ALL (shows all images from all categories)
+- PIERCINGS (shows only piercing images)
+- BODY MODS (shows only body modification images)
+- LOBULOPLASTY (shows only lobuloplasty images)
+- GENITAL PIERCINGS (shows only genital piercing images)
+
+Filter Requirements:
+- Filter functionality: When a filter is selected, gallery grid displays only images from that category
+- Smooth animation when changing filters (images should transition smoothly)
+- Filter styling and behavior should be similar to the "my works" section filter from the VITORCACHOEIRA folder project
+- Filter should be positioned below the header
+
+GALLERY GRID
+------------
+Grid Specifications:
+- Display: Grid layout that fits the whole screen horizontally
+- Columns: 6 images per row
+- Frame Type: Equal squared frames
+- Spacing: No borders/gaps between frames (frames are together)
+- Frame Size: All frames must have the same size
+- Media Placement: Media links from pictures_index.txt will be placed in the frames
+
+Grid Behavior:
+- Similar to picture grids on homepage and piercings page
+- Instead of 3 slots per row, this will have 6 per row
+- Images should fill their frames completely
+- Grid should be responsive (adjust for mobile/tablet)
+
+ANIMATIONS
+----------
+- Smooth animation when changing filters
+- Images should transition smoothly when filter changes
+- Consider fade in/out or other smooth transitions
+
+TECHNICAL NOTES
+---------------
+- Use React Router for page routing
+- Use Framer Motion for smooth animations
+- Grid should be responsive (mobile-friendly)
+- Images should load efficiently
+- Consider lazy loading for performance
+
+REFERENCE
+---------
+- Filter styling/behavior: Similar to "my works" section filter from VITORCACHOEIRA project
+- Grid layout: Similar to homepage and piercings page grids (but 6 columns instead of 3)
+
