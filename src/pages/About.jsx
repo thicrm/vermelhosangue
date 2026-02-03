@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Star } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
+import OptimizedImage from '../components/OptimizedImage'
 
 const About = () => {
   const { t } = useLanguage()
@@ -22,7 +23,7 @@ const About = () => {
               overflow: 'hidden'
             }}
           >
-            <motion.img 
+            <OptimizedImage
               src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/40-2.jpeg"
               alt="Gallery"
               style={{
@@ -31,11 +32,9 @@ const About = () => {
                 objectFit: 'cover',
                 display: 'block'
               }}
-              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
+              loading="eager"
             />
           </div>
           <div
@@ -45,7 +44,7 @@ const About = () => {
               overflow: 'hidden'
             }}
           >
-            <motion.img 
+            <OptimizedImage
               src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/41-2.jpeg"
               alt="Gallery"
               style={{
@@ -54,11 +53,9 @@ const About = () => {
                 objectFit: 'cover',
                 display: 'block'
               }}
-              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
+              loading="eager"
             />
           </div>
           <div
@@ -68,7 +65,7 @@ const About = () => {
               overflow: 'hidden'
             }}
           >
-            <motion.img 
+            <OptimizedImage
               src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/42-2.jpeg"
               alt="Gallery"
               style={{
@@ -77,11 +74,9 @@ const About = () => {
                 objectFit: 'cover',
                 display: 'block'
               }}
-              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
+              loading="eager"
             />
           </div>
         </div>
@@ -157,7 +152,7 @@ const About = () => {
               viewport={{ once: true }}
               style={{ overflow: 'hidden', width: '100%', aspectRatio: '3/4' }}
             >
-              <img 
+              <OptimizedImage
                 src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/IMG_4290.JPG"
                 alt="Gallery"
                 style={{
@@ -166,10 +161,7 @@ const About = () => {
                   objectFit: 'cover',
                   display: 'block'
                 }}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.parentElement.style.backgroundColor = '#f5f5f5';
-                }}
+                loading="lazy"
               />
             </motion.div>
 
@@ -248,7 +240,7 @@ const About = () => {
               viewport={{ once: true }}
               style={{ overflow: 'hidden', width: '100%', aspectRatio: '3/4' }}
             >
-              <img 
+              <OptimizedImage
                 src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Fotos%20giulia%20/IMG_4295.JPG"
                 alt="Gallery"
                 style={{
@@ -257,10 +249,7 @@ const About = () => {
                   objectFit: 'cover',
                   display: 'block'
                 }}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.parentElement.style.backgroundColor = '#f5f5f5';
-                }}
+                loading="lazy"
               />
             </motion.div>
           </div>
@@ -299,7 +288,7 @@ const About = () => {
                 padding: '2rem',
                 borderRadius: '10px',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-                border: '1px solid #e5e5e5'
+                border: '1px solid #dc2626'
               }}
             >
               {/* Stars */}
@@ -323,12 +312,12 @@ const About = () => {
               {/* Author */}
               <p style={{
                 fontSize: '0.9rem',
-                color: '#666',
+                color: '#dc2626',
                 textAlign: 'right',
                 fontStyle: 'normal',
                 marginTop: '1rem',
                 fontFamily: 'Inter, sans-serif',
-                fontWeight: '300'
+                fontWeight: '700'
               }}>
                 - Marcela Vieira
               </p>
@@ -350,7 +339,7 @@ const About = () => {
                 padding: '2rem',
                 borderRadius: '10px',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-                border: '1px solid #e5e5e5'
+                border: '1px solid #dc2626'
               }}
             >
               {/* Stars */}
@@ -374,12 +363,12 @@ const About = () => {
               {/* Author */}
               <p style={{
                 fontSize: '0.9rem',
-                color: '#666',
+                color: '#dc2626',
                 textAlign: 'right',
                 fontStyle: 'normal',
                 marginTop: '1rem',
                 fontFamily: 'Inter, sans-serif',
-                fontWeight: '300'
+                fontWeight: '700'
               }}>
                 - Milena Bottega
               </p>
@@ -401,7 +390,7 @@ const About = () => {
                 padding: '2rem',
                 borderRadius: '10px',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-                border: '1px solid #e5e5e5'
+                border: '1px solid #dc2626'
               }}
             >
               {/* Stars */}
@@ -425,12 +414,12 @@ const About = () => {
               {/* Author */}
               <p style={{
                 fontSize: '0.9rem',
-                color: '#666',
+                color: '#dc2626',
                 textAlign: 'right',
                 fontStyle: 'normal',
                 marginTop: '1rem',
                 fontFamily: 'Inter, sans-serif',
-                fontWeight: '300'
+                fontWeight: '700'
               }}>
                 - Artthur Sampaio
               </p>
