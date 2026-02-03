@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, Star } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
+import OptimizedImage from '../components/OptimizedImage'
 
 const Piercings = () => {
   const { t } = useLanguage()
@@ -52,7 +53,7 @@ const Piercings = () => {
               overflow: 'hidden'
             }}
           >
-            <motion.img 
+            <OptimizedImage
               src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_9969.jpg"
               alt="Body Piercings"
               style={{
@@ -61,11 +62,9 @@ const Piercings = () => {
                 objectFit: 'cover',
                 display: 'block'
               }}
-              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
+              loading="eager"
             />
           </div>
           <div
@@ -75,7 +74,7 @@ const Piercings = () => {
               overflow: 'hidden'
             }}
           >
-            <motion.img 
+            <OptimizedImage
               src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_0928_edit.jpg"
               alt="Body Piercings"
               style={{
@@ -84,11 +83,9 @@ const Piercings = () => {
                 objectFit: 'cover',
                 display: 'block'
               }}
-              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
+              loading="eager"
             />
           </div>
           <div
@@ -98,7 +95,7 @@ const Piercings = () => {
               overflow: 'hidden'
             }}
           >
-            <motion.img 
+            <OptimizedImage
               src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_1016.jpg"
               alt="Body Piercings"
               style={{
@@ -107,11 +104,9 @@ const Piercings = () => {
                 objectFit: 'cover',
                 display: 'block'
               }}
-              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
+              loading="eager"
             />
           </div>
         </div>
