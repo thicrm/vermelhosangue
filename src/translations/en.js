@@ -7,7 +7,8 @@ export const en = {
     care: 'Care',
     lobuloplasty: 'Lobuloplasty',
     genitalPiercing: 'Genital Piercing',
-    bodyModification: 'Body Modification'
+    bodyModification: 'Body Modification',
+    gallery: 'Gallery'
   },
   // Homepage
   home: {
@@ -234,6 +235,16 @@ export const en = {
     consultationTitle: 'PRIVATE CONSULTATION',
     consultationDescription: 'Book a private consultation to discuss your options in complete confidence',
     bookConsultation: 'Book Private Consultation'
+  },
+  // Gallery Page
+  gallery: {
+    filters: {
+      all: 'ALL',
+      piercings: 'PIERCINGS',
+      bodyMods: 'BODY MODS',
+      lobuloplasty: 'LOBULOPLASTY',
+      genitalPiercings: 'GENITAL PIERCINGS'
+    }
   }
 }
 

@@ -10,6 +10,10 @@ import Piercings from './pages/Piercings'
 import About from './pages/About'
 import Care from './pages/Care'
 import GenitalPiercing from './pages/GenitalPiercing'
+import { lazy, Suspense } from 'react'
+
+// Code splitting for Gallery page to improve initial load
+const Gallery = lazy(() => import('./pages/Gallery'))
 
 function App() {
   const [isVerified, setIsVerified] = useState(false)
@@ -83,6 +87,37 @@ function App() {
                   <Route path="/piercings" element={<Piercings />} />
                   <Route path="/care" element={<Care />} />
                   <Route path="/genital-piercing" element={<GenitalPiercing />} />
+                  <Route 
+                    path="/gallery" 
+                    element={
+                      <Suspense fallback={
+                        <div style={{ 
+                          paddingTop: '120px', 
+                          minHeight: '80vh', 
+                          display: 'flex', 
+                          alignItems: 'center', 
+                          justifyContent: 'center' 
+                        }}>
+                          <div style={{
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '50%',
+                            border: '3px solid #f3f3f3',
+                            borderTop: '3px solid #dc2626',
+                            animation: 'spin 1s linear infinite'
+                          }} />
+                          <style>{`
+                            @keyframes spin {
+                              0% { transform: rotate(0deg); }
+                              100% { transform: rotate(360deg); }
+                            }
+                          `}</style>
+                        </div>
+                      }>
+                        <Gallery />
+                      </Suspense>
+                    } 
+                  />
                 </Routes>
               </main>
               <Footer />

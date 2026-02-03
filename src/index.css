@@ -224,10 +224,30 @@ a:hover {
 
 ::-webkit-scrollbar-thumb {
   background: #dc2626;
-  border-radius: 10px;
+  border-radius: 0;
   transition: background 0.4s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #b91c1c;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }

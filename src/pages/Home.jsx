@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Star, Shield, Award } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
+import OptimizedImage from '../components/OptimizedImage'
 
 const Home = () => {
   const { t } = useLanguage()
@@ -150,14 +151,16 @@ const Home = () => {
                 boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
               }}
             >
-              <img 
+              <OptimizedImage
                 src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/id%20visual%20/ad%20picture%20with%20pierced%20model.jpg"
                 alt="Professional piercing work"
                 style={{
                   width: '100%',
                   height: 'auto',
-                  display: 'block'
+                  display: 'block',
+                  borderRadius: '10px'
                 }}
+                loading="eager"
               />
             </motion.div>
 
@@ -170,14 +173,16 @@ const Home = () => {
                 boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
               }}
             >
-              <img 
+              <OptimizedImage
                 src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/id%20visual%20/c216534c-6dba-4819-b0bf-71b0984fb863.jpg"
                 alt="Studio work"
                 style={{
                   width: '100%',
                   height: 'auto',
-                  display: 'block'
+                  display: 'block',
+                  borderRadius: '10px'
                 }}
+                loading="eager"
               />
             </motion.div>
 
@@ -200,7 +205,7 @@ const Home = () => {
               overflow: 'hidden'
             }}
           >
-            <motion.img 
+            <OptimizedImage
               src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/28-2.jpeg"
               alt="Body Piercings"
               style={{
@@ -209,11 +214,9 @@ const Home = () => {
                 objectFit: 'cover',
                 display: 'block'
               }}
-              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
+              loading="eager"
             />
           </div>
           <div
@@ -223,7 +226,7 @@ const Home = () => {
               overflow: 'hidden'
             }}
           >
-            <motion.img 
+            <OptimizedImage
               src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/31-2.jpeg"
               alt="Lobuloplasty"
               style={{
@@ -232,11 +235,9 @@ const Home = () => {
                 objectFit: 'cover',
                 display: 'block'
               }}
-              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
+              loading="eager"
             />
           </div>
           <div
@@ -246,7 +247,7 @@ const Home = () => {
               overflow: 'hidden'
             }}
           >
-            <motion.img 
+            <OptimizedImage
               src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_1017.jpg"
               alt="Body Modification"
               style={{
@@ -255,11 +256,9 @@ const Home = () => {
                 objectFit: 'cover',
                 display: 'block'
               }}
-              whileHover={{ scale: 1.1, filter: 'brightness(1.15)' }}
+              whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
+              loading="eager"
             />
           </div>
         </div>

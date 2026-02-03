@@ -14,7 +14,8 @@ const Header = () => {
     { name: t.nav.about, href: '/about' },
     { name: t.nav.piercings, href: '/piercings' },
     { name: t.nav.care, href: '/care' },
-    { name: t.nav.genitalPiercing, href: '/genital-piercing' }
+    { name: t.nav.genitalPiercing, href: '/genital-piercing' },
+    { name: t.nav.gallery, href: '/gallery' }
   ]
 
   const isActive = (path) => location.pathname === path
