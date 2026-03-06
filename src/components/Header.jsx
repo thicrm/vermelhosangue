@@ -11,11 +11,11 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', href: '/' }, // Keep "Home" as is - not translated
-    { name: t.nav.about, href: '/about' },
+    { name: t.nav.gallery, href: '/gallery' },
     { name: t.nav.piercings, href: '/piercings' },
-    { name: t.nav.care, href: '/care' },
     { name: t.nav.genitalPiercing, href: '/genital-piercing' },
-    { name: t.nav.gallery, href: '/gallery' }
+    { name: t.nav.care, href: '/care' },
+    { name: t.nav.about, href: '/about' }
   ]
 
   const isActive = (path) => location.pathname === path

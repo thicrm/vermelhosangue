@@ -2,13 +2,13 @@ export const pt = {
   // Navigation (keep as is)
   nav: {
     home: 'Home',
-    about: 'Sobre Nós',
-    piercings: 'Piercings',
+    gallery: 'Galeria',
+    piercings: 'Piercing',
+    genitalPiercing: 'Genital',
     care: 'Cuidados',
+    about: 'Sobre Nós',
     lobuloplasty: 'Lobuloplastia',
-    genitalPiercing: 'Piercing Genital',
-    bodyModification: 'Modificação Corporal',
-    gallery: 'Galeria'
+    bodyModification: 'Modificação Corporal'
   },
   // Homepage
   home: {
@@ -31,7 +31,7 @@ export const pt = {
     serviceCards: {
       bodyPiercings: {
         title: 'Perfurações Corporais',
-        description: 'Serviços profissionais de piercing para todas as partes do corpo com joias premium'
+        description: 'Serviços profissionais de piercing para todas as partes do corpo com jóias de alto padrão.'
       },
       lobuloplasty: {
         title: 'Lobuloplastia',
@@ -54,7 +54,7 @@ export const pt = {
   },
   // Footer
   footer: {
-    description: 'Estúdio profissional de piercing e modificação corporal. Experiências feitas com ética e os mais altos padrões de segurança e arte.',
+    description: 'Estúdio profissional de piercing e modificação corporal. Experiências feitas com ética e os mais altos padrões de segurança.',
     services: 'Serviços',
     contact: 'Contato',
     hours: 'Horários',
@@ -168,6 +168,12 @@ export const pt = {
       gauged: {
         title: 'Perfurações Calibrosas',
         description: 'Perfurações realizadas com joias a partir de 2 mm de espessura. Podem ser aplicadas em diferentes regiões, como lóbulos, septo, umbigo, mamilos e perfurações íntimas, sempre respeitando a anatomia e o conforto de cada pessoa.'
+      },
+      cta: {
+        title: 'PRONTO PARA SEU NOVO PIERCING?',
+        description: 'Agende sua consulta e deixe-nos ajudá-lo a escolher o piercing perfeito',
+        bookConsultation: 'Agendar Consulta',
+        askQuestions: 'Tirar Dúvidas'
       }
     },
     bodyModifications: {
@@ -218,23 +224,21 @@ export const pt = {
     ageRestriction: '18+ APENAS • CONSULTAS PRIVADAS',
     ourServices: 'NOSSOS SERVIÇOS',
     ourServicesDescription: 'Serviços profissionais de piercing genital com total privacidade e discrição',
-    maleTitle: 'Perfurações Genitais Masculinas',
-    femaleTitle: 'Perfurações Genitais Femininas',
+    maleTitle: 'Pênis',
+    femaleTitle: 'Vulva',
     safetyTitle: 'SEGURANÇA E PRIVACIDADE',
     safetyDescription: 'Sua segurança e privacidade são nossas principais prioridades. Todos os procedimentos são realizados em ambiente completamente privado e estéril com os mais altos padrões de higiene e discrição.',
     safetyFeatures: [
-      'Salas de consulta completamente privadas',
-      'Equipamentos estéreis de grau médico',
-      'Apenas joias de grau para implante',
-      'Protocolos rigorosos de confidencialidade',
-      'Profissionais experientes e certificados'
+      'Consulta completamente privada',
+      'Materiais estéreis e descartáveis',
+      'Apenas jóias de grau implante'
     ],
     importantTitle: 'INFORMAÇÕES IMPORTANTES',
     importantText1: 'Perfurações genitais requerem consideração especial e tempos de cicatrização mais longos. Fornecemos instruções detalhadas de cuidados pós-procedimento e acompanhamento.',
     importantText2: 'Todos os clientes devem ter 18+ com documento de identidade válido. Consulta obrigatória antes de qualquer procedimento.',
-    consultationTitle: 'CONSULTA PRIVADA',
-    consultationDescription: 'Agende uma consulta privada para discutir suas opções com total confiança',
-    bookConsultation: 'Agendar Consulta Privada'
+    consultationTitle: 'DESCUBRA AS POSSIBILIDADES',
+    consultationDescription: 'Agende uma consulta para discutir suas opções com total confiança',
+    bookConsultation: 'Agendar Consulta'
   },
   // Gallery Page
   gallery: {

@@ -57,6 +57,10 @@ const Home = () => {
             onLoadedData={(e) => {
               e.target.play().catch(() => {});
             }}
+            onEnded={(e) => {
+              e.target.currentTime = 0;
+              e.target.play().catch(() => {});
+            }}
           >
             <source src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/id%20visual%20/presentation%20video%202.MOV" type="video/mp4" />
             Your browser does not support the video tag.
@@ -79,6 +83,10 @@ const Home = () => {
             onLoadedData={(e) => {
               e.target.play().catch(() => {});
             }}
+            onEnded={(e) => {
+              e.target.currentTime = 0;
+              e.target.play().catch(() => {});
+            }}
           >
             <source src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/id%20visual%20/presentation%20video.mov" type="video/mp4" />
             Your browser does not support the video tag.
@@ -99,6 +107,10 @@ const Home = () => {
             }}
             poster="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/id%20visual%20/logo%20%2B%20tilte%20%2B%20subtitle.jpg"
             onLoadedData={(e) => {
+              e.target.play().catch(() => {});
+            }}
+            onEnded={(e) => {
+              e.target.currentTime = 0;
               e.target.play().catch(() => {});
             }}
           >

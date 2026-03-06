@@ -259,6 +259,32 @@ const About = () => {
       {/* Reviews Section */}
       <section style={{ padding: '4rem 0', backgroundColor: '#fff' }}>
         <div className="container">
+          {/* Title and Subtitle */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            style={{ textAlign: 'center', marginBottom: '3rem' }}
+          >
+            <h2 style={{
+              fontSize: '3rem',
+              marginBottom: '1rem',
+              color: '#dc2626',
+              fontFamily: 'Poppins, sans-serif'
+            }}>
+              EXPERIMENTE A DIFERENÇA
+            </h2>
+            <p style={{
+              fontSize: '1.2rem',
+              color: '#666',
+              maxWidth: '600px',
+              margin: '0 auto'
+            }}>
+              Descubra por que os clientes escolhem o Vermelho Sangue.
+            </p>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -424,46 +450,22 @@ const About = () => {
                 - Artthur Sampaio
               </p>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
+            </motion.div>
 
-      {/* CTA Section */}
-      <section style={{
-        background: 'linear-gradient(135deg, #111 0%, #333 100%)',
-        color: 'white',
-        padding: '4rem 0',
-        textAlign: 'center'
-      }}>
-        <div className="container">
+          {/* CTA Button Below Reviews */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            style={{ textAlign: 'center', marginTop: '3rem' }}
           >
-            <h2 style={{
-              fontSize: '3rem',
-              marginBottom: '1rem',
-              fontFamily: 'Poppins, sans-serif'
-            }}>
-              {t.about.experienceTitle}
-            </h2>
-            <p style={{
-              fontSize: '1.2rem',
-              marginBottom: '2rem',
-              maxWidth: '600px',
-              margin: '0 auto 2rem',
-              opacity: 0.9
-            }}>
-              {t.about.experienceText}
-            </p>
             <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{
               backgroundColor: '#dc2626',
               fontSize: '1.1rem',
               padding: '15px 30px'
             }}>
-              Book Consultation
+              Agendar Consulta
               <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
             </a>
           </motion.div>

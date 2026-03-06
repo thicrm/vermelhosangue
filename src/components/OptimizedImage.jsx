@@ -5,6 +5,8 @@ const OptimizedImage = ({
   src, 
   alt, 
   style = {}, 
+  initial,
+  animate,
   whileHover = {},
   transition = { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
   loading = 'lazy',
@@ -145,6 +147,8 @@ const OptimizedImage = ({
             borderRadius: borderRadius,
             ...imageStyles
           }}
+          initial={initial}
+          animate={animate}
           whileHover={whileHover}
           transition={transition}
           onLoad={handleLoad}

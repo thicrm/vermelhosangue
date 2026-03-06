@@ -172,24 +172,14 @@ const Care = () => {
             }}>
               {t.services.care.ctaDescription}
             </p>
-            <div className="flex" style={{ gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{
-                backgroundColor: '#dc2626',
-                fontSize: '1.1rem',
-                padding: '15px 30px'
-              }}>
-                {t.home.whatsappBooking}
-                <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
-              </a>
-              <a href="mailto:vermelhosanguejewelry@gmail.com" className="btn btn-outline" style={{
-                borderColor: 'white',
-                color: 'white',
-                fontSize: '1.1rem',
-                padding: '15px 30px'
-              }}>
-                {t.home.emailConsultation}
-              </a>
-            </div>
+            <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{
+              backgroundColor: '#dc2626',
+              fontSize: '1.1rem',
+              padding: '15px 30px'
+            }}>
+              {t.home.whatsappBooking}
+              <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
+            </a>
           </motion.div>
         </div>
       </section>
