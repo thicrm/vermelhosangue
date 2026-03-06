@@ -120,7 +120,12 @@ export const en = {
             'Conch',
             'Rook',
             'Forward Helix',
-            'Industrial'
+            'Industrial',
+            'Snug',
+            'Anti Tragus',
+            'Conch Rim',
+            'Scapha/Flat',
+            'Stacked Lobe'
           ],
           facial: [
             'Nose',
@@ -130,16 +135,17 @@ export const en = {
             'Labret',
             'Medusa',
             'Monroe',
-            'Cheek'
+            'Dahlia',
+            'Vertical Labret',
+            'Jestrum',
+            'Angel Fangs'
           ],
           body: [
             'Navel',
             'Nipple',
             'Surface',
-            'Dermal',
             'Microdermal',
-            'Corset',
-            'Scarification'
+            'Genital'
           ]
         }
       },

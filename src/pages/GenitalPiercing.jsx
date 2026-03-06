@@ -193,6 +193,61 @@ const GenitalPiercing = () => {
         </div>
       </section>
 
+      {/* Images Grid */}
+      <section style={{ padding: '0', margin: 0 }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: 0,
+          width: '100%'
+        }}>
+          <div
+            style={{
+              width: '100%',
+              height: '650px',
+              overflow: 'hidden'
+            }}
+          >
+            <img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Perfura%C3%A7%C3%B5es%20em%20vulva-penis/F33EF9BB-B3AC-4AA6-8595-DA27F00ECD64.jpg"
+              alt="Genital Piercing"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.parentElement.style.backgroundColor = '#f5f5f5';
+              }}
+            />
+          </div>
+          <div
+            style={{
+              width: '100%',
+              height: '650px',
+              overflow: 'hidden'
+            }}
+          >
+            <img 
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Perfura%C3%A7%C3%B5es%20em%20vulva-penis/IMG_2887_jpg.jpg"
+              alt="Genital Piercing"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.parentElement.style.backgroundColor = '#f5f5f5';
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section style={{
         background: 'linear-gradient(135deg, #111 0%, #333 100%)',

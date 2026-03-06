@@ -117,10 +117,15 @@ export const pt = {
             'Hélix',
             'Trágus',
             'Daith',
-            'Côncha',
+            'Conch',
             'Rook',
             'Forward Helix',
-            'Industrial'
+            'Industrial',
+            'Snug',
+            'Anti Tragus',
+            'Conch Rim',
+            'Scapha/Flat',
+            'Stacked Lobe'
           ],
           facial: [
             'Nariz',
@@ -130,16 +135,17 @@ export const pt = {
             'Labret',
             'Medusa',
             'Monroe',
-            'Bochecha'
+            'Dahlia',
+            'Vertical Labret',
+            'Jestrum',
+            'Angel Fangs'
           ],
           body: [
             'Umbigo',
             'Mamilo',
             'Surface',
-            'Dermal',
             'Microdermal',
-            'Corset',
-            'Escarificação'
+            'Genital'
           ]
         }
       },
