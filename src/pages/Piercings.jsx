@@ -60,10 +60,13 @@ const Piercings = () => {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                display: 'block'
+                display: 'block',
+                objectPosition: 'left center'
               }}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              initial={{ scale: 2.3 }}
+              animate={{ scale: 2.3 }}
+              whileHover={{ scale: 2.4 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
               loading="eager"
             />
           </div>
@@ -81,10 +84,13 @@ const Piercings = () => {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                display: 'block'
+                display: 'block',
+                objectPosition: 'center'
               }}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              initial={{ scale: 1.8 }}
+              animate={{ scale: 1.8 }}
+              whileHover={{ scale: 1.9 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
               loading="eager"
             />
           </div>
@@ -96,16 +102,19 @@ const Piercings = () => {
             }}
           >
             <OptimizedImage
-              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_1016.jpg"
+              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4285.JPG"
               alt="Body Piercings"
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                display: 'block'
+                display: 'block',
+                objectPosition: 'center 15%'
               }}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              initial={{ scale: 1.5 }}
+              animate={{ scale: 1.5 }}
+              whileHover={{ scale: 1.6 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
               loading="eager"
             />
           </div>
@@ -261,6 +270,58 @@ const Piercings = () => {
         </div>
       </section>
 
+      {/* Jewelry Images Section */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#f9f9f9' }}>
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '2rem',
+              maxWidth: '1200px',
+              margin: '0 auto'
+            }}
+          >
+            <div style={{ overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', aspectRatio: '1/1' }}>
+              <img 
+                src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4289(1).JPG"
+                alt="Premium Jewelry Collection"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.style.backgroundColor = '#f5f5f5';
+                }}
+              />
+            </div>
+            <div style={{ overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', aspectRatio: '1/1' }}>
+              <img 
+                src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4138.jpg"
+                alt="Premium Jewelry Collection"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.style.backgroundColor = '#f5f5f5';
+                }}
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Gauged Piercings Section */}
       <section style={{ padding: '4rem 0' }}>
         <div className="container">
@@ -307,7 +368,7 @@ const Piercings = () => {
                 }}
               >
                 <img 
-                  src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4285.JPG"
+                  src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/D4582A04-5AEC-4FFC-9903-35449C29CC94.jpg"
                   alt="Gauged Piercing"
                   style={{
                     width: '100%',
@@ -327,7 +388,7 @@ const Piercings = () => {
                 }}
               >
                 <img 
-                  src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4289.JPG"
+                  src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_0165.jpg"
                   alt="Gauged Piercing"
                   style={{
                     width: '100%',
@@ -343,58 +404,6 @@ const Piercings = () => {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Jewelry Images Section */}
-      <section style={{ padding: '4rem 0', backgroundColor: '#f9f9f9' }}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '2rem',
-              maxWidth: '1200px',
-              margin: '0 auto'
-            }}
-          >
-            <div style={{ overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', aspectRatio: '1/1' }}>
-              <img 
-                src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4289(1).JPG"
-                alt="Premium Jewelry Collection"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  display: 'block'
-                }}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.parentElement.style.backgroundColor = '#f5f5f5';
-                }}
-              />
-            </div>
-            <div style={{ overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', aspectRatio: '1/1' }}>
-              <img 
-                src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4381.jpg"
-                alt="Premium Jewelry Collection"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  display: 'block'
-                }}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.parentElement.style.backgroundColor = '#f5f5f5';
-                }}
-              />
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -417,7 +426,7 @@ const Piercings = () => {
               marginBottom: '1rem',
               fontFamily: 'Poppins, sans-serif'
             }}>
-              READY FOR YOUR NEW PIERCING?
+              {t.services.bodyPiercings.cta.title}
             </h2>
             <p style={{
               fontSize: '1.2rem',
@@ -426,7 +435,7 @@ const Piercings = () => {
               margin: '0 auto 2rem',
               opacity: 0.9
             }}>
-              Book your consultation and let us help you choose the perfect piercing
+              {t.services.bodyPiercings.cta.description}
             </p>
             <div className="flex" style={{ gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{
@@ -434,7 +443,7 @@ const Piercings = () => {
                 fontSize: '1.1rem',
                 padding: '15px 30px'
               }}>
-                Book Consultation
+                {t.services.bodyPiercings.cta.bookConsultation}
               </a>
               <a href="mailto:vermelhosanguejewelry@gmail.com" className="btn btn-outline" style={{
                 borderColor: 'white',
@@ -442,7 +451,7 @@ const Piercings = () => {
                 fontSize: '1.1rem',
                 padding: '15px 30px'
               }}>
-                Ask Questions
+                {t.services.bodyPiercings.cta.askQuestions}
               </a>
             </div>
           </motion.div>
