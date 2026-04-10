@@ -71,11 +71,11 @@ const Header = () => {
               </span>
             </button>
             
-            <a href="tel:+5511979826688" className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
+            <a href="tel:+5511979826688" className="flex top-bar-contact" style={{ alignItems: 'center', gap: '0.5rem' }}>
               <Phone size={16} />
-              (11) 97982-6688
+              <span className="contact-text">(11) 97982-6688</span>
             </a>
-            <a href="mailto:vermelhosanguejewelry@gmail.com" className="flex" style={{ alignItems: 'center', gap: '0.5rem' }}>
+            <a href="mailto:vermelhosanguejewelry@gmail.com" className="flex top-bar-email" style={{ alignItems: 'center', gap: '0.5rem' }}>
               <Mail size={16} />
               vermelhosanguejewelry@gmail.com
             </a>
@@ -253,6 +253,55 @@ const Header = () => {
           
           nav > div > div:first-of-type {
             display: none !important;
+          }
+        }
+        
+        /* Responsive fixes for top bar */
+        @media (max-width: 1024px) {
+          .top-bar-email {
+            display: none !important;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .top-bar-contact .contact-text {
+            display: none !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .top-bar-contact {
+            display: none !important;
+          }
+        }
+        
+        /* Responsive logo and title */
+        @media (max-width: 768px) {
+          header img[alt="Vermelho Sangue Body Jewelry"] {
+            height: 35px !important;
+          }
+          
+          header div[style*="1.8rem"] {
+            font-size: 1.2rem !important;
+          }
+          
+          header div[style*="0.9rem"][style*="body jewelry"] {
+            font-size: 0.7rem !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          header img[alt="Vermelho Sangue Body Jewelry"] {
+            height: 30px !important;
+          }
+          
+          header div[style*="1.8rem"], 
+          header div[style*="1.2rem"] {
+            font-size: 1rem !important;
+          }
+          
+          header div[style*="body jewelry"] {
+            font-size: 0.65rem !important;
           }
         }
       `}</style>

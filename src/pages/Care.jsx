@@ -22,35 +22,37 @@ const Care = () => {
 
   return (
     <div style={{ paddingTop: '120px' }}>
-      {/* Hero Section */}
-      <section style={{
-        background: 'linear-gradient(135deg, #111 0%, #333 100%)',
-        color: 'white',
-        padding: '4rem 0',
-        textAlign: 'center'
-      }}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+      {/* Video Section */}
+      <section style={{ padding: '0', margin: 0 }}>
+        <div style={{
+          width: '100%',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          <video 
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            style={{
+              width: '100%',
+              height: 'auto',
+              display: 'block',
+              maxHeight: '70vh',
+              objectFit: 'cover'
+            }}
+            onLoadedData={(e) => {
+              e.target.play().catch(() => {});
+            }}
+            onEnded={(e) => {
+              e.target.currentTime = 0;
+              e.target.play().catch(() => {});
+            }}
           >
-            <h1 style={{
-              fontSize: '3.5rem',
-              marginBottom: '1rem',
-              fontFamily: 'Poppins, sans-serif'
-            }}>
-              {t.services.care.heroTitle}
-            </h1>
-            <p style={{
-              fontSize: '1.2rem',
-              maxWidth: '800px',
-              margin: '0 auto',
-              opacity: 0.9
-            }}>
-              {t.services.care.heroDescription}
-            </p>
-          </motion.div>
+            <source src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/copy_33040683-23AB-46A1-9798-546D8B8770D8.mov" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </section>
 
