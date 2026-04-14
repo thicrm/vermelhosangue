@@ -49,7 +49,7 @@ function App() {
     <LanguageProvider>
       <Router>
         <ScrollToTop />
-        <div className="App">
+        <div className="App" style={{ overflowX: 'hidden', width: '100%', maxWidth: '100vw' }}>
           {/* Render homepage behind age verification when not verified */}
           {!isVerified && (
             <div style={{

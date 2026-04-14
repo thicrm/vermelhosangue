@@ -4,9 +4,25 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, Star } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 import OptimizedImage from '../components/OptimizedImage'
+import { useState, useEffect } from 'react'
 
 const Piercings = () => {
   const { t } = useLanguage()
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  
+  const headerImages = [
+    "https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_9969.jpg",
+    "https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_0928_edit.jpg",
+    "https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4285.JPG"
+  ]
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % headerImages.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+  
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -40,7 +56,8 @@ const Piercings = () => {
     <div style={{ paddingTop: '120px' }}>
       {/* Images Section */}
       <section style={{ padding: '0', margin: 0 }}>
-        <div style={{
+        {/* Desktop Grid */}
+        <div className="piercings-grid-desktop" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: 0,
@@ -119,6 +136,56 @@ const Piercings = () => {
             />
           </div>
         </div>
+        
+        {/* Mobile Carousel */}
+        <div className="piercings-carousel-mobile" style={{
+          display: 'none',
+          width: '100%',
+          height: '400px',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          {headerImages.map((image, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ 
+                opacity: currentImageIndex === index ? 1 : 0,
+                x: currentImageIndex === index ? 0 : 100
+              }}
+              transition={{ duration: 0.5 }}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                pointerEvents: currentImageIndex === index ? 'auto' : 'none'
+              }}
+            >
+              <img 
+                src={image}
+                alt={`Piercing ${index + 1}`}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+              />
+            </motion.div>
+          ))}
+        </div>
+        
+        <style jsx>{`
+          @media (max-width: 768px) {
+            .piercings-grid-desktop {
+              display: none !important;
+            }
+            .piercings-carousel-mobile {
+              display: block !important;
+            }
+          }
+        `}</style>
       </section>
 
       {/* Piercing Types */}
@@ -278,6 +345,7 @@ const Piercings = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="jewelry-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(2, 1fr)',
@@ -319,6 +387,14 @@ const Piercings = () => {
               />
             </div>
           </motion.div>
+          
+          <style jsx>{`
+            @media (max-width: 768px) {
+              .jewelry-grid {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `}</style>
         </div>
       </section>
 
@@ -445,7 +521,7 @@ const Piercings = () => {
               }}>
                 {t.services.bodyPiercings.cta.bookConsultation}
               </a>
-              <a href="mailto:vermelhosanguejewelry@gmail.com" className="btn btn-outline" style={{
+              <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{
                 borderColor: 'white',
                 color: 'white',
                 fontSize: '1.1rem',

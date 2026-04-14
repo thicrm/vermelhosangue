@@ -153,7 +153,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation - Centered */}
-          <div className="flex" style={{ gap: '2rem', alignItems: 'center', flex: 1, justifyContent: 'center' }}>
+          <div className="flex desktop-nav" style={{ gap: '2rem', alignItems: 'center', flex: 1, justifyContent: 'center' }}>
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -216,7 +216,7 @@ const Header = () => {
             }}
           >
             <div className="container">
-              <div className="flex-column" style={{ gap: '1rem' }}>
+              <div className="flex-column" style={{ gap: '1rem', alignItems: 'center' }}>
                 {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -228,14 +228,15 @@ const Header = () => {
                   fontWeight: isActive(item.href) ? '600' : '400',
                   fontSize: '1.1rem',
                   padding: '0.5rem 0',
-                  transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                  transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  textAlign: 'center'
                 }}
               >
                     {item.name}
                   </Link>
                 ))}
-                <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid #e5e5e5' }}>
-                  <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{ width: '100%', textAlign: 'center' }}>
+                <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid #e5e5e5', width: '100%', display: 'flex', justifyContent: 'center' }}>
+                  <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{ width: '80%', maxWidth: '300px', textAlign: 'center' }}>
                     WhatsApp Booking
                   </a>
                 </div>
@@ -251,7 +252,7 @@ const Header = () => {
             display: block !important;
           }
           
-          nav > div > div:first-of-type {
+          .desktop-nav {
             display: none !important;
           }
         }

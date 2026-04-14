@@ -4,9 +4,25 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Star, Shield, Award } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 import OptimizedImage from '../components/OptimizedImage'
+import { useState, useEffect } from 'react'
 
 const Home = () => {
   const { t } = useLanguage()
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  
+  const servicesImages = [
+    "https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/28-2.jpeg",
+    "https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/31-2.jpeg",
+    "https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_1017.jpg"
+  ]
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % servicesImages.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+  
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -204,7 +220,8 @@ const Home = () => {
 
       {/* Images Above Services */}
       <section style={{ padding: '0', margin: 0 }}>
-        <div style={{
+        {/* Desktop Grid */}
+        <div className="services-grid-desktop" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: 0,
@@ -274,6 +291,56 @@ const Home = () => {
             />
           </div>
         </div>
+        
+        {/* Mobile Carousel */}
+        <div className="services-carousel-mobile" style={{
+          display: 'none',
+          width: '100%',
+          height: '400px',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          {servicesImages.map((image, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ 
+                opacity: currentImageIndex === index ? 1 : 0,
+                x: currentImageIndex === index ? 0 : 100
+              }}
+              transition={{ duration: 0.5 }}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                pointerEvents: currentImageIndex === index ? 'auto' : 'none'
+              }}
+            >
+              <img 
+                src={image}
+                alt={`Service ${index + 1}`}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+              />
+            </motion.div>
+          ))}
+        </div>
+        
+        <style jsx>{`
+          @media (max-width: 768px) {
+            .services-grid-desktop {
+              display: none !important;
+            }
+            .services-carousel-mobile {
+              display: block !important;
+            }
+          }
+        `}</style>
       </section>
 
       {/* Featured Services */}
