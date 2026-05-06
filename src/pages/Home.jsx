@@ -392,14 +392,14 @@ const Home = () => {
               {
                 title: t.home.serviceCards.lobuloplasty.title,
                 description: t.home.serviceCards.lobuloplasty.description,
-                link: '/lobuloplasty',
+                link: '/gallery?filter=lobuloplasty',
                 icon: <Award size={40} />,
                 image: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Lobuloplastia%20/IMG_2850.PNG'
               },
               {
                 title: t.home.serviceCards.bodyModification.title,
                 description: t.home.serviceCards.bodyModification.description,
-                link: '/body-modification',
+                link: '/gallery?filter=bodyMods',
                 icon: <Shield size={40} />,
                 image: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Modifica%C3%A7%C3%B5es%20corporais/f1eea2d2-fe31-4595-8b11-08ea44ec828e.jpg'
               }

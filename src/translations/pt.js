@@ -151,11 +151,11 @@ export const pt = {
       },
       process: {
         title: 'NOSSO PROCESSO',
-        description: 'Da consulta aos cuidados pós-procedimento, garantimos que cada etapa atenda aos nossos altos padrões',
+        description: 'Da avaliação aos cuidados pós-procedimento, garantimos que cada etapa atenda aos nossos altos padrões',
         steps: {
           consultation: {
-            title: 'Consulta',
-            description: 'Agende sua aviliação e encontre o piercing pra você'
+            title: 'Avaliação',
+            description: 'Agende sua avaliação e encontre o piercing pra você'
           },
           preparation: {
             title: 'Preparação',
@@ -177,8 +177,8 @@ export const pt = {
       },
       cta: {
         title: 'PRONTO PARA SEU NOVO PIERCING?',
-        description: 'Agende sua consulta e deixe-nos ajudá-lo a escolher o piercing perfeito',
-        bookConsultation: 'Agendar Consulta',
+        description: 'Agende sua avaliação e deixe-nos ajudá-lo a escolher o piercing perfeito',
+        bookConsultation: 'Agendar Avaliação',
         askQuestions: 'Tirar Dúvidas'
       }
     },

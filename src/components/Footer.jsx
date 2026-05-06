@@ -32,14 +32,14 @@ const Footer = () => {
             {/* Footer Logo */}
             <div style={{ marginBottom: '1rem' }}>
               <img 
-                src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/id%20visual%20/logo%20red%20background.png" 
+                src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/vermelho%20sangue%20png%20preto%20copy.PNG" 
                 alt="Vermelho Sangue Body Jewelry" 
                 style={{
                   height: '40px',
-                  width: 'auto'
+                  width: 'auto',
+                  filter: 'brightness(0) invert(1)'
                 }}
                 onError={(e) => {
-                  // Fallback to text if logo not found
                   e.target.style.display = 'none';
                   e.target.nextSibling.style.display = 'block';
                 }}
@@ -115,7 +115,7 @@ const Footer = () => {
               onMouseLeave={(e) => e.target.style.color = 'white'}>
                 Piercing
               </Link>
-              <Link to="/body-modification" style={{ 
+              <Link to="/gallery?filter=bodyMods" style={{ 
                 color: 'white', 
                 textDecoration: 'none',
                 transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1)'

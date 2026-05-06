@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
+import { useSearchParams } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
+
+const GALLERY_FILTER_IDS = ['all', 'piercings', 'bodyMods', 'lobuloplasty', 'genitalPiercings']
 
 // Gallery Item Component for better performance
 const GalleryItem = React.memo(({ imageUrl, index, activeFilter, isLoaded, onLoad, observer, onClick }) => {
@@ -133,10 +136,23 @@ const GalleryItem = React.memo(({ imageUrl, index, activeFilter, isLoaded, onLoa
 
 const Gallery = () => {
   const { t } = useLanguage()
+  const [searchParams, setSearchParams] = useSearchParams()
   const [loadedImages, setLoadedImages] = useState(new Set())
   const observerRef = useRef(null)
-  const [activeFilter, setActiveFilter] = useState('all')
+  const [activeFilter, setActiveFilter] = useState(() => {
+    const param = searchParams.get('filter')
+    return param && GALLERY_FILTER_IDS.includes(param) ? param : 'all'
+  })
   const [selectedMedia, setSelectedMedia] = useState(null)
+
+  useEffect(() => {
+    const param = searchParams.get('filter')
+    if (param && GALLERY_FILTER_IDS.includes(param)) {
+      setActiveFilter(param)
+    } else {
+      setActiveFilter('all')
+    }
+  }, [searchParams])
   
   // Gallery images organized by category
   const galleryImages = {
@@ -520,7 +536,14 @@ const Gallery = () => {
             {filters.map((filter) => (
               <motion.button
                 key={filter.id}
-                onClick={() => setActiveFilter(filter.id)}
+                onClick={() => {
+                  setActiveFilter(filter.id)
+                  if (filter.id === 'all') {
+                    setSearchParams({}, { replace: true })
+                  } else {
+                    setSearchParams({ filter: filter.id }, { replace: true })
+                  }
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 style={{

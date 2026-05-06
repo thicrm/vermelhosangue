@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '../context/LanguageContext'
 
+const VERIFY_LOGO_SRC =
+  'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/vermelho%20sangue%20png%20preto%20copy.PNG'
+
 const AgeVerification = ({ onVerify }) => {
   const [isVisible, setIsVisible] = useState(true)
   const { t } = useLanguage()
@@ -77,18 +80,19 @@ const AgeVerification = ({ onVerify }) => {
           transition={{ delay: 0.2 }}
           style={{ marginBottom: '2rem' }}
         >
-          <img 
-            src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/id%20visual%20/logo%20red%20background.png"
+          <img
+            src={VERIFY_LOGO_SRC}
             alt="Vermelho Sangue Body Jewelry"
+            decoding="async"
             style={{
               height: '120px',
               width: 'auto',
-              marginBottom: '1rem'
+              marginBottom: '1rem',
+              display: 'inline-block'
             }}
             onError={(e) => {
-              // Fallback to text if logo not found
-              e.target.style.display = 'none';
-              e.target.nextSibling.style.display = 'block';
+              e.target.style.display = 'none'
+              e.target.nextSibling.style.display = 'block'
             }}
           />
           <div style={{ display: 'none' }}>

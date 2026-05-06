@@ -4,6 +4,9 @@ import { motion } from 'framer-motion'
 import { Menu, X, Phone, Mail } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
+const HEADER_LOGO_SRC =
+  'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/vermelho%20sangue%20png%20header.png'
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
@@ -108,18 +111,19 @@ const Header = () => {
                 gap: '1rem'
               }}
             >
-              {/* Solo Logo */}
-              <img 
-                src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/id%20visual%20/logo%20red%20background.png" 
-                alt="Vermelho Sangue Body Jewelry" 
+              <img
+                src={HEADER_LOGO_SRC}
+                alt="Vermelho Sangue Body Jewelry"
+                decoding="async"
+                className="header-brand-logo-sizer"
                 style={{
                   height: '50px',
-                  width: 'auto'
+                  width: 'auto',
+                  display: 'block',
+                  flexShrink: 0
                 }}
                 onError={(e) => {
-                  // Fallback to text if logo not found
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
+                  e.target.style.display = 'none'
                 }}
               />
               {/* Text Content */}
@@ -278,7 +282,7 @@ const Header = () => {
         
         /* Responsive logo and title */
         @media (max-width: 768px) {
-          header img[alt="Vermelho Sangue Body Jewelry"] {
+          header .header-brand-logo-sizer {
             height: 35px !important;
           }
           
@@ -292,7 +296,7 @@ const Header = () => {
         }
         
         @media (max-width: 480px) {
-          header img[alt="Vermelho Sangue Body Jewelry"] {
+          header .header-brand-logo-sizer {
             height: 30px !important;
           }
           
