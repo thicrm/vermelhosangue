@@ -168,11 +168,11 @@ const Footer = () => {
             <div className="flex-column" style={{ gap: '0.5rem', fontSize: '0.9rem' }}>
               <div className="flex-between">
                 <span>{t.footer.mondayFriday}</span>
-                <span>10:00 AM - 8:00 PM</span>
+                <span>Atendimento com horário marcado</span>
               </div>
               <div className="flex-between">
                 <span>{t.footer.saturday}</span>
-                <span>10:00 AM - 6:00 PM</span>
+                <span>Atendimento com horário marcado</span>
               </div>
               <div className="flex-between">
                 <span>{t.footer.sunday}</span>

@@ -155,7 +155,7 @@ export const pt = {
         steps: {
           consultation: {
             title: 'Consulta',
-            description: 'Discutimos seus objetivos, avaliamos a anatomia e recomendamos a melhor abordagem'
+            description: 'Agende sua aviliação e encontre o piercing pra você'
           },
           preparation: {
             title: 'Preparação',
