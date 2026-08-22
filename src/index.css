@@ -280,3 +280,55 @@ a:hover {
     grid-template-columns: repeat(6, 1fr);
   }
 }
+
+/* Footer hours — stacked rows avoid flex-between misalignment in narrow columns */
+.footer-hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.footer-hours-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.footer-hours-day {
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.footer-hours-value {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.footer-hours-note {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: #dc2626;
+  text-align: center;
+  line-height: 1.45;
+}
+
+/* Genital piercing page — bottom image grid */
+.genital-grid-cell {
+  width: 100%;
+  height: clamp(420px, 42vw, 650px);
+  overflow: hidden;
+}
+
+.genital-grid-cell img {
+  height: 100% !important;
+  max-width: none;
+}
+
+.genital-grid-focal-left {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 6% center;
+}

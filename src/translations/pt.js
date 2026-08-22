@@ -12,7 +12,7 @@ export const pt = {
   },
   // Homepage
   home: {
-    heroTitle: 'HIGH END FASHION PIERCING JEWELRY',
+    heroTitle: 'JOIAS DE PIERCING DE ALTA MODA',
     heroDescription: 'Serviços profissionais de piercing e modificação corporal com os mais altos padrões de segurança.',
     exploreServices: 'Explorar Serviços',
     bookConsultation: 'Agendar Consulta',
@@ -62,6 +62,8 @@ export const pt = {
     saturday: 'Sábado',
     sunday: 'Domingo',
     closed: 'Fechado',
+    byAppointment: 'Atendimento com horário marcado',
+    hoursNote: 'Obs: Atendimento somente com hora marcada.',
     bookViaWhatsapp: 'Agendar via WhatsApp',
     privacyPolicy: 'Política de Privacidade',
     termsOfService: 'Termos de Serviço',

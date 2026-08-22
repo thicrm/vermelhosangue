@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { LanguageProvider } from './context/LanguageContext'
 import AgeVerification from './components/AgeVerification'
 import Header from './components/Header'
@@ -49,7 +49,7 @@ function App() {
     <LanguageProvider>
       <Router>
         <ScrollToTop />
-        <div className="App" style={{ overflowX: 'hidden', width: '100%', maxWidth: '100vw' }}>
+        <div className="App notranslate" translate="no" style={{ overflowX: 'hidden', width: '100%', maxWidth: '100vw' }}>
           {/* Render homepage behind age verification when not verified */}
           {!isVerified && (
             <div style={{
@@ -118,6 +118,7 @@ function App() {
                       </Suspense>
                     } 
                   />
+                  <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
               </main>
               <Footer />

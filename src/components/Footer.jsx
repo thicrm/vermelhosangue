@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Mail, MapPin, Instagram } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
+import AppLink from './AppLink'
+import { ROUTES, GALLERY_FILTERS, galleryRoute } from '../constants/routes'
 
 // Import WhatsApp SVG icon
 const WhatsAppIcon = ({ size = 16 }) => (
@@ -106,24 +107,24 @@ const Footer = () => {
           <div>
             <h4 style={{ marginBottom: '1rem', color: '#dc2626' }}>{t.footer.services}</h4>
             <div className="flex-column" style={{ gap: '0.5rem' }}>
-              <Link to="/piercings" style={{ 
+              <AppLink to={ROUTES.piercings} style={{ 
                 color: 'white', 
                 textDecoration: 'none',
                 transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
               }}
               onMouseEnter={(e) => e.target.style.color = '#dc2626'}
               onMouseLeave={(e) => e.target.style.color = 'white'}>
-                Piercing
-              </Link>
-              <Link to="/gallery?filter=bodyMods" style={{ 
+                {t.nav.piercings}
+              </AppLink>
+              <AppLink to={galleryRoute(GALLERY_FILTERS.bodyMods)} style={{ 
                 color: 'white', 
                 textDecoration: 'none',
                 transition: 'color 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
               }}
               onMouseEnter={(e) => e.target.style.color = '#dc2626'}
               onMouseLeave={(e) => e.target.style.color = 'white'}>
-                Modificações Corporais
-              </Link>
+                {t.nav.bodyModification}
+              </AppLink>
             </div>
           </div>
 
@@ -165,32 +166,26 @@ const Footer = () => {
           {/* Hours */}
           <div>
             <h4 style={{ marginBottom: '1rem', color: '#dc2626' }}>{t.footer.hours}</h4>
-            <div className="flex-column" style={{ gap: '0.5rem', fontSize: '0.9rem' }}>
-              <div className="flex-between">
-                <span>{t.footer.mondayFriday}</span>
-                <span>Atendimento com horário marcado</span>
+            <div className="footer-hours-list">
+              <div className="footer-hours-row">
+                <span className="footer-hours-day">{t.footer.mondayFriday}</span>
+                <span className="footer-hours-value">{t.footer.byAppointment}</span>
               </div>
-              <div className="flex-between">
-                <span>{t.footer.saturday}</span>
-                <span>Atendimento com horário marcado</span>
+              <div className="footer-hours-row">
+                <span className="footer-hours-day">{t.footer.saturday}</span>
+                <span className="footer-hours-value">{t.footer.byAppointment}</span>
               </div>
-              <div className="flex-between">
-                <span>{t.footer.sunday}</span>
-                <span>{t.footer.closed}</span>
+              <div className="footer-hours-row">
+                <span className="footer-hours-day">{t.footer.sunday}</span>
+                <span className="footer-hours-value">{t.footer.closed}</span>
               </div>
             </div>
             <div style={{ marginTop: '1rem' }}>
               <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{ width: '100%', textAlign: 'center' }}>
                 {t.footer.bookViaWhatsapp}
               </a>
-              <p style={{ 
-                marginTop: '0.75rem', 
-                fontSize: '0.75rem', 
-                color: '#dc2626',
-                textAlign: 'center',
-                lineHeight: '1.4'
-              }}>
-                Obs: Atendimento somente com hora marcada.
+              <p className="footer-hours-note">
+                {t.footer.hoursNote}
               </p>
             </div>
           </div>
@@ -210,7 +205,7 @@ const Footer = () => {
             {t.footer.copyright}
           </p>
           <div className="flex" style={{ gap: '2rem', fontSize: '0.9rem' }}>
-            <Link to="/about" style={{ 
+            <AppLink to={ROUTES.about} style={{ 
               color: 'white', 
               textDecoration: 'none', 
               opacity: 0.7,
@@ -225,8 +220,8 @@ const Footer = () => {
               e.target.style.color = 'white';
             }}>
               {t.footer.privacyPolicy}
-            </Link>
-            <Link to="/about" style={{ 
+            </AppLink>
+            <AppLink to={ROUTES.about} style={{ 
               color: 'white', 
               textDecoration: 'none', 
               opacity: 0.7,
@@ -241,7 +236,7 @@ const Footer = () => {
               e.target.style.color = 'white';
             }}>
               {t.footer.termsOfService}
-            </Link>
+            </AppLink>
           </div>
         </div>
       </div>

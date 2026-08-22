@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import { useSearchParams } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
+import { GALLERY_FILTERS } from '../constants/routes'
 
-const GALLERY_FILTER_IDS = ['all', 'piercings', 'bodyMods', 'lobuloplasty', 'genitalPiercings']
+const GALLERY_FILTER_IDS = Object.values(GALLERY_FILTERS)
 
 // Gallery Item Component for better performance
 const GalleryItem = React.memo(({ imageUrl, index, activeFilter, isLoaded, onLoad, observer, onClick }) => {

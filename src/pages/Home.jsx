@@ -1,24 +1,38 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { ArrowRight, Star, Shield, Award } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 import OptimizedImage from '../components/OptimizedImage'
+import AppLink from '../components/AppLink'
+import { ROUTES, GALLERY_FILTERS, galleryRoute } from '../constants/routes'
 import { useState, useEffect } from 'react'
 
 const Home = () => {
   const { t } = useLanguage()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   
-  const servicesImages = [
-    "https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/28-2.jpeg",
-    "https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/31-2.jpeg",
-    "https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_1017.jpg"
+  const servicesGridImages = [
+    {
+      src: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/28-2.jpeg',
+      alt: 'Body Piercings'
+    },
+    {
+      src: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/31-2.jpeg',
+      alt: 'Lobuloplasty'
+    },
+    {
+      src: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_1017.jpg',
+      alt: 'Body Modification',
+      objectPosition: 'center 72%',
+      transformOrigin: 'center 72%',
+      scale: 1.75,
+      hoverScale: 1.85
+    }
   ]
   
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % servicesImages.length)
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % servicesGridImages.length)
     }, 5000)
     return () => clearInterval(timer)
   }, [])
@@ -227,7 +241,9 @@ const Home = () => {
           gap: 0,
           width: '100%'
         }}>
+          {servicesGridImages.map((image) => (
           <div
+            key={image.src}
             style={{
               width: '100%',
               height: '650px',
@@ -235,61 +251,26 @@ const Home = () => {
             }}
           >
             <OptimizedImage
-              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/28-2.jpeg"
-              alt="Body Piercings"
+              src={image.src}
+              alt={image.alt}
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                display: 'block'
+                display: 'block',
+                ...(image.objectPosition && {
+                  objectPosition: image.objectPosition,
+                  transformOrigin: image.transformOrigin
+                })
               }}
-              whileHover={{ scale: 1.1 }}
+              initial={image.scale ? { scale: image.scale } : undefined}
+              animate={image.scale ? { scale: image.scale } : undefined}
+              whileHover={{ scale: image.hoverScale ?? 1.1 }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
               loading="eager"
             />
           </div>
-          <div
-            style={{
-              width: '100%',
-              height: '650px',
-              overflow: 'hidden'
-            }}
-          >
-            <OptimizedImage
-              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/31-2.jpeg"
-              alt="Lobuloplasty"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                display: 'block'
-              }}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              loading="eager"
-            />
-          </div>
-          <div
-            style={{
-              width: '100%',
-              height: '650px',
-              overflow: 'hidden'
-            }}
-          >
-            <OptimizedImage
-              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_1017.jpg"
-              alt="Body Modification"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                display: 'block'
-              }}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              loading="eager"
-            />
-          </div>
+          ))}
         </div>
         
         {/* Mobile Carousel */}
@@ -300,9 +281,9 @@ const Home = () => {
           position: 'relative',
           overflow: 'hidden'
         }}>
-          {servicesImages.map((image, index) => (
+          {servicesGridImages.map((image, index) => (
             <motion.div
-              key={index}
+              key={image.src}
               initial={{ opacity: 0 }}
               animate={{ 
                 opacity: currentImageIndex === index ? 1 : 0,
@@ -319,12 +300,17 @@ const Home = () => {
               }}
             >
               <img 
-                src={image}
-                alt={`Service ${index + 1}`}
+                src={image.src}
+                alt={image.alt}
                 style={{
                   width: '100%',
                   height: '100%',
-                  objectFit: 'cover'
+                  objectFit: 'cover',
+                  ...(image.objectPosition && {
+                    objectPosition: image.objectPosition,
+                    transform: image.scale ? `scale(${image.scale})` : undefined,
+                    transformOrigin: image.transformOrigin
+                  })
                 }}
               />
             </motion.div>
@@ -385,21 +371,21 @@ const Home = () => {
               {
                 title: t.home.serviceCards.bodyPiercings.title,
                 description: t.home.serviceCards.bodyPiercings.description,
-                link: '/piercings',
+                link: ROUTES.piercings,
                 icon: <Star size={40} />,
                 image: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_2142.JPG'
               },
               {
                 title: t.home.serviceCards.lobuloplasty.title,
                 description: t.home.serviceCards.lobuloplasty.description,
-                link: '/gallery?filter=lobuloplasty',
+                link: galleryRoute(GALLERY_FILTERS.lobuloplasty),
                 icon: <Award size={40} />,
                 image: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Lobuloplastia%20/IMG_2850.PNG'
               },
               {
                 title: t.home.serviceCards.bodyModification.title,
                 description: t.home.serviceCards.bodyModification.description,
-                link: '/gallery?filter=bodyMods',
+                link: galleryRoute(GALLERY_FILTERS.bodyMods),
                 icon: <Shield size={40} />,
                 image: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Modifica%C3%A7%C3%B5es%20corporais/f1eea2d2-fe31-4595-8b11-08ea44ec828e.jpg'
               }
@@ -412,6 +398,7 @@ const Home = () => {
                   position: 'relative',
                   borderRadius: '10px',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                  border: '1px solid #dc2626',
                   textAlign: 'center',
                   overflow: 'hidden',
                   minHeight: '400px',
@@ -477,7 +464,7 @@ const Home = () => {
                   }}>
                     {service.description}
                   </p>
-                  <Link to={service.link} style={{
+                  <AppLink to={service.link} style={{
                     color: 'white',
                     fontWeight: '600',
                     textDecoration: 'none',
@@ -502,7 +489,7 @@ const Home = () => {
                   >
                     {t.home.serviceCards.learnMore}
                     <ArrowRight size={16} />
-                  </Link>
+                  </AppLink>
                 </div>
               </motion.div>
             ))}
@@ -546,10 +533,10 @@ const Home = () => {
                   {t.home.craftedDescription2}
                 </p>
               )}
-              <Link to="/about" className="btn">
+              <AppLink to={ROUTES.about} className="btn">
                 {t.home.ourStory}
                 <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
-              </Link>
+              </AppLink>
             </motion.div>
             
             <motion.div
@@ -609,7 +596,7 @@ const Home = () => {
               {t.home.heroDescription}
             </p>
             <div className="flex" style={{ gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link to="/piercings" className="btn" style={{
+              <AppLink to={ROUTES.piercings} className="btn" style={{
                 backgroundColor: '#dc2626',
                 fontSize: '1.1rem',
                 padding: '15px 30px',
@@ -619,7 +606,7 @@ const Home = () => {
               }}>
                 {t.home.exploreServices}
                 <ArrowRight size={20} />
-              </Link>
+              </AppLink>
               <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{
                 borderColor: 'white',
                 color: 'white',

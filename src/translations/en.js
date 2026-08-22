@@ -62,6 +62,8 @@ export const en = {
     saturday: 'Saturday',
     sunday: 'Sunday',
     closed: 'Closed',
+    byAppointment: 'By appointment only',
+    hoursNote: 'Note: Appointments only.',
     bookViaWhatsapp: 'Book via WhatsApp',
     privacyPolicy: 'Privacy Policy',
     termsOfService: 'Terms of Service',

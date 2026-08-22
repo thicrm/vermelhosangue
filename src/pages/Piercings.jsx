@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, Star } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 import OptimizedImage from '../components/OptimizedImage'
@@ -11,9 +10,27 @@ const Piercings = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   
   const headerImages = [
-    "https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_9969.jpg",
-    "https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_0928_edit.jpg",
-    "https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4285.JPG"
+    {
+      src: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_9969.jpg',
+      objectPosition: '42% center',
+      transformOrigin: '42% center',
+      scale: 2.3,
+      hoverScale: 2.4
+    },
+    {
+      src: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_0928_edit.jpg',
+      objectPosition: 'center',
+      transformOrigin: 'center center',
+      scale: 1.8,
+      hoverScale: 1.9
+    },
+    {
+      src: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4285.JPG',
+      objectPosition: 'center 15%',
+      transformOrigin: 'center 15%',
+      scale: 1.5,
+      hoverScale: 1.6
+    }
   ]
   
   useEffect(() => {
@@ -63,78 +80,34 @@ const Piercings = () => {
           gap: 0,
           width: '100%'
         }}>
-          <div
-            style={{
-              width: '100%',
-              height: '650px',
-              overflow: 'hidden'
-            }}
-          >
-            <OptimizedImage
-              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_9969.jpg"
-              alt="Body Piercings"
+          {headerImages.map((image, index) => (
+            <div
+              key={image.src}
+              className="piercings-hero-cell"
               style={{
                 width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                display: 'block',
-                objectPosition: 'left center'
+                overflow: 'hidden'
               }}
-              initial={{ scale: 2.3 }}
-              animate={{ scale: 2.3 }}
-              whileHover={{ scale: 2.4 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              loading="eager"
-            />
-          </div>
-          <div
-            style={{
-              width: '100%',
-              height: '650px',
-              overflow: 'hidden'
-            }}
-          >
-            <OptimizedImage
-              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_0928_edit.jpg"
-              alt="Body Piercings"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                display: 'block',
-                objectPosition: 'center'
-              }}
-              initial={{ scale: 1.8 }}
-              animate={{ scale: 1.8 }}
-              whileHover={{ scale: 1.9 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              loading="eager"
-            />
-          </div>
-          <div
-            style={{
-              width: '100%',
-              height: '650px',
-              overflow: 'hidden'
-            }}
-          >
-            <OptimizedImage
-              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Piercings%20/IMG_4285.JPG"
-              alt="Body Piercings"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                display: 'block',
-                objectPosition: 'center 15%'
-              }}
-              initial={{ scale: 1.5 }}
-              animate={{ scale: 1.5 }}
-              whileHover={{ scale: 1.6 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              loading="eager"
-            />
-          </div>
+            >
+              <OptimizedImage
+                src={image.src}
+                alt={`Body Piercings ${index + 1}`}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block',
+                  objectPosition: image.objectPosition,
+                  transformOrigin: image.transformOrigin
+                }}
+                initial={{ scale: image.scale }}
+                animate={{ scale: image.scale }}
+                whileHover={{ scale: image.hoverScale }}
+                transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+                loading="eager"
+              />
+            </div>
+          ))}
         </div>
         
         {/* Mobile Carousel */}
@@ -147,7 +120,7 @@ const Piercings = () => {
         }}>
           {headerImages.map((image, index) => (
             <motion.div
-              key={index}
+              key={image.src}
               initial={{ opacity: 0 }}
               animate={{ 
                 opacity: currentImageIndex === index ? 1 : 0,
@@ -164,12 +137,13 @@ const Piercings = () => {
               }}
             >
               <img 
-                src={image}
+                src={image.src}
                 alt={`Piercing ${index + 1}`}
                 style={{
                   width: '100%',
                   height: '100%',
-                  objectFit: 'cover'
+                  objectFit: 'cover',
+                  objectPosition: image.objectPosition
                 }}
               />
             </motion.div>
@@ -177,6 +151,10 @@ const Piercings = () => {
         </div>
         
         <style jsx>{`
+          .piercings-hero-cell {
+            height: clamp(420px, 42vw, 650px);
+          }
+
           @media (max-width: 768px) {
             .piercings-grid-desktop {
               display: none !important;
@@ -228,7 +206,7 @@ const Piercings = () => {
                   padding: '2rem',
                   borderRadius: '10px',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-                  border: '1px solid #e5e5e5'
+                  border: '1px solid #dc2626'
                 }}
               >
                 <h3 style={{

@@ -2,9 +2,24 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Shield, CheckCircle } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
+import OptimizedImage from '../components/OptimizedImage'
 
 const GenitalPiercing = () => {
   const { t } = useLanguage()
+
+  const focalLeftImage = {
+    src: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Perfura%C3%A7%C3%B5es%20em%20vulva-penis/F33EF9BB-B3AC-4AA6-8595-DA27F00ECD64.jpg',
+    alt: 'Genital Piercing'
+  }
+
+  const gridImages = [
+    focalLeftImage,
+    {
+      src: 'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Perfura%C3%A7%C3%B5es%20em%20vulva-penis/IMG_2887_jpg.jpg',
+      alt: 'Genital Piercing'
+    }
+  ]
+
   return (
     <div style={{ paddingTop: '120px' }}>
       {/* Safety & Privacy */}
@@ -167,7 +182,8 @@ const GenitalPiercing = () => {
                   backgroundColor: '#f9f9f9',
                   padding: '2rem',
                   borderRadius: '10px',
-                  border: '1px solid #e5e5e5'
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                  border: '1px solid #dc2626'
                 }}
               >
                 <h3 style={{
@@ -202,47 +218,24 @@ const GenitalPiercing = () => {
           width: '100%'
         }}>
           <div
-            style={{
-              width: '100%',
-              height: '650px',
-              overflow: 'hidden'
-            }}
-          >
-            <img 
-              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Perfura%C3%A7%C3%B5es%20em%20vulva-penis/F33EF9BB-B3AC-4AA6-8595-DA27F00ECD64.jpg"
-              alt="Genital Piercing"
+            className="genital-grid-cell genital-grid-focal-left"
+            role="img"
+            aria-label={focalLeftImage.alt}
+            style={{ backgroundImage: `url(${focalLeftImage.src})` }}
+          />
+          <div className="genital-grid-cell">
+            <OptimizedImage
+              src={gridImages[1].src}
+              alt={gridImages[1].alt}
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
                 display: 'block'
               }}
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.parentElement.style.backgroundColor = '#f5f5f5';
-              }}
-            />
-          </div>
-          <div
-            style={{
-              width: '100%',
-              height: '650px',
-              overflow: 'hidden'
-            }}
-          >
-            <img 
-              src="https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/Perfura%C3%A7%C3%B5es%20em%20vulva-penis/IMG_2887_jpg.jpg"
-              alt="Genital Piercing"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                display: 'block'
-              }}
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.parentElement.style.backgroundColor = '#f5f5f5';
-              }}
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              loading="eager"
             />
           </div>
         </div>

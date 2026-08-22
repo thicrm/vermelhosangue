@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Menu, X, Phone, Mail } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
+import AppLink from './AppLink'
+import { ROUTES } from '../constants/routes'
 
 const HEADER_LOGO_SRC =
   'https://pub-a0f122baf81d4b6e8169b6d13eebf12f.r2.dev/vermelho%20sangue%20png%20header.png'
@@ -13,12 +15,12 @@ const Header = () => {
   const { language, toggleLanguage, t } = useLanguage()
 
   const navigation = [
-    { name: 'Home', href: '/' }, // Keep "Home" as is - not translated
-    { name: t.nav.gallery, href: '/gallery' },
-    { name: t.nav.piercings, href: '/piercings' },
-    { name: t.nav.genitalPiercing, href: '/genital-piercing' },
-    { name: t.nav.care, href: '/care' },
-    { name: t.nav.about, href: '/about' }
+    { id: 'home', name: 'Home', href: ROUTES.home },
+    { id: 'gallery', name: t.nav.gallery, href: ROUTES.gallery },
+    { id: 'piercings', name: t.nav.piercings, href: ROUTES.piercings },
+    { id: 'genital', name: t.nav.genitalPiercing, href: ROUTES.genitalPiercing },
+    { id: 'care', name: t.nav.care, href: ROUTES.care },
+    { id: 'about', name: t.nav.about, href: ROUTES.about }
   ]
 
   const isActive = (path) => location.pathname === path
@@ -102,7 +104,7 @@ const Header = () => {
       <nav style={{ padding: '1rem 0' }}>
         <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo */}
-          <Link to="/" style={{ textDecoration: 'none', flexShrink: 0 }}>
+          <AppLink to={ROUTES.home} style={{ textDecoration: 'none', flexShrink: 0 }}>
             <motion.div
               whileHover={{ scale: 1.05 }}
               style={{
@@ -154,13 +156,13 @@ const Header = () => {
                 </div>
               </div>
             </motion.div>
-          </Link>
+          </AppLink>
 
           {/* Desktop Navigation - Centered */}
           <div className="flex desktop-nav" style={{ gap: '2rem', alignItems: 'center', flex: 1, justifyContent: 'center' }}>
             {navigation.map((item) => (
-              <Link
-                key={item.name}
+              <AppLink
+                key={item.id}
                 to={item.href}
                 style={{
                   textDecoration: 'none',
@@ -186,7 +188,7 @@ const Header = () => {
                     }}
                   />
                 )}
-              </Link>
+              </AppLink>
             ))}
           </div>
 
@@ -222,8 +224,8 @@ const Header = () => {
             <div className="container">
               <div className="flex-column" style={{ gap: '1rem', alignItems: 'center' }}>
                 {navigation.map((item) => (
-              <Link
-                key={item.name}
+              <AppLink
+                key={item.id}
                 to={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 style={{
@@ -237,7 +239,7 @@ const Header = () => {
                 }}
               >
                     {item.name}
-                  </Link>
+                  </AppLink>
                 ))}
                 <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid #e5e5e5', width: '100%', display: 'flex', justifyContent: 'center' }}>
                   <a href="https://wa.me/5511979826688" target="_blank" rel="noopener noreferrer" className="btn" style={{ width: '80%', maxWidth: '300px', textAlign: 'center' }}>
